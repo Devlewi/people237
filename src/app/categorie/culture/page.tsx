@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
+  /*
   openGraph: {
     title: "CATEGORIE | PEOPLE 237",
     description: "Page categorie de PEOPLE 237",
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
     description: "Page categorie de PEOPLE 237",
     images: ["/images/favicon.png"],
   },
+  */
 };
 
 const CulturePage: React.FC = () => {

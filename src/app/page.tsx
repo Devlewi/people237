@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
-  },
+  },/*
   openGraph: {
     title: "ACCUEIL | PEOPLE 237",
     description: "Page d'accueil de PEOPLE 237",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "ACCUEIL | PEOPLE 237",
     description: "Page d'accueil de PEOPLE 237",
     images: ["/favicon.ico"],
-  },
+  },*/
 
 };
 
