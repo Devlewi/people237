@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CATEGORIE | PEOPLE 237",
     description: "Page categorie de PEOPLE 237",
-    url: "https://people237-frontend.vercel.app/",
+    url: "https://people237.vercel.app/",
     siteName: "PEOPLE 237",
     images: [{ url: "/images/logo-og.png", width: 120, height: 120 }],
   },
