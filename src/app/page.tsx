@@ -5,6 +5,12 @@ import HomePageContentComponent from "./components/HomePageContentComponent";
 
 
 export const metadata: Metadata = {
+  title: "ACCUEIL | PEOPLE 237",
+  description: "Page d'accueil de PEOPLE 237, découvrez nos dernières actualités.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   
 
 };
