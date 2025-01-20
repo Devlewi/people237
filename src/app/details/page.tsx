@@ -10,7 +10,9 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
-  openGraph: {
+
+  /*
+    openGraph: {
     title: "DETAILS ARTICLE | PEOPLE 237",
     description: "Page details article de PEOPLE 237",
     url: "https://people237.vercel.app/",
@@ -23,6 +25,7 @@ export const metadata: Metadata = {
     description: "Page details article de PEOPLE 237",
     images: ["/favicon.ico"],
   },
+  */
 
 };
 
