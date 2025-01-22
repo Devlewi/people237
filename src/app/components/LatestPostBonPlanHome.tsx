@@ -41,6 +41,7 @@ const LatestPostBonPlanHome = () => {
                                             objectFit="cover"
                                           />
                                         </Link>
+                                       {/*
                                         <span className="cat-labels cat-labels-overlay c-overlay p-bot-left">
                                           <Link
                                             href="/categorie/culture/"
@@ -51,6 +52,7 @@ const LatestPostBonPlanHome = () => {
                                             Bons Plans
                                           </Link>
                                         </span>
+                                       */}
                                       </div>
                                       <div className="content">
                                         <div className="post-meta post-meta-a has-below">
@@ -120,6 +122,7 @@ const LatestPostBonPlanHome = () => {
                                             objectFit="cover"
                                           />
                                         </Link>
+                                            {/*
                                         <span className="cat-labels cat-labels-overlay c-overlay p-bot-left">
                                           <Link
                                             href="/categorie/culture/"
@@ -130,6 +133,7 @@ const LatestPostBonPlanHome = () => {
                                             Bons Plans
                                           </Link>
                                         </span>
+                                       */}
                                       </div>
                                       <div className="content">
                                         <div className="post-meta post-meta-a has-below">

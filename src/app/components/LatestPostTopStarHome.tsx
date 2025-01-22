@@ -41,6 +41,7 @@ const LatestPostTopStarHome = () => {
                                             priority={false}
                                           />
                                         </Link>
+                                      {/*
                                         <span className="cat-labels cat-labels-overlay c-overlay p-bot-left">
                                           <Link
                                             href="/categorie/culture"
@@ -51,6 +52,7 @@ const LatestPostTopStarHome = () => {
                                             People
                                           </Link>
                                         </span>
+                                      */}
                                       </div>
                                       <div className="content">
                                         <div className="post-meta post-meta-a has-below">
@@ -120,16 +122,18 @@ const LatestPostTopStarHome = () => {
                                             priority={false}
                                           />
                                         </Link>
+                                          {/*
                                         <span className="cat-labels cat-labels-overlay c-overlay p-bot-left">
-                                        <Link
+                                          <Link
                                             href="/categorie/culture"
                                             className="category term-color-3"
                                             rel="category"
                                             tabIndex={-1}
                                           >
-                                            PEOPLE
+                                            People
                                           </Link>
                                         </span>
+                                      */}
                                       </div>
                                       <div className="content">
                                         <div className="post-meta post-meta-a has-below">
@@ -199,16 +203,18 @@ const LatestPostTopStarHome = () => {
                                             objectFit="cover" // &apos;image s'adapte sans déformation en remplissant la zone
                                           />
                                         </Link>
+                                           {/*
                                         <span className="cat-labels cat-labels-overlay c-overlay p-bot-left">
-                                        <Link
+                                          <Link
                                             href="/categorie/culture"
                                             className="category term-color-3"
                                             rel="category"
                                             tabIndex={-1}
                                           >
-                                            PEOPLE
+                                            People
                                           </Link>
                                         </span>
+                                      */}
                                       </div>
                                       <div className="content">
                                         <div className="post-meta post-meta-a has-below">
@@ -279,16 +285,18 @@ const LatestPostTopStarHome = () => {
                                             objectFit="cover" // &apos;image s'adapte sans déformation en remplissant la zone
                                           />
                                         </Link>
+                                          {/*
                                         <span className="cat-labels cat-labels-overlay c-overlay p-bot-left">
-                                        <Link
+                                          <Link
                                             href="/categorie/culture"
                                             className="category term-color-3"
                                             rel="category"
                                             tabIndex={-1}
                                           >
-                                            PEOPLE
+                                            People
                                           </Link>
                                         </span>
+                                      */}
                                       </div>
                                       <div className="content">
                                         <div className="post-meta post-meta-a has-below">

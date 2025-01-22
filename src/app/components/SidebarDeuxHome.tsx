@@ -35,6 +35,7 @@ const SidebarDeuxHome = () => {
                                               objectFit="cover"
                                             />
                                           </Link>
+                                         {/*
                                           <span className="cat-labels cat-labels-overlay c-overlay p-bot-left">
                                             <Link
                                               href="/details/"
@@ -45,6 +46,7 @@ const SidebarDeuxHome = () => {
                                               Concert
                                             </Link>
                                           </span>
+                                         */}
                                         </div>
                                         <div className="content">
                                           <div className="post-meta post-meta-a has-below">

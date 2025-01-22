@@ -54,6 +54,7 @@ const FeaturedInfo = () => {
                                 <div className="content-wrap">
                                   <div className="content">
                                     <div className="post-meta post-meta-a meta-contrast has-below">
+                                      {/*
                                       <div className="post-meta-items meta-above">
                                         <span className="meta-item cat-labels">
                                           <Link
@@ -70,6 +71,7 @@ const FeaturedInfo = () => {
                                           </Link>
                                         </span>
                                       </div>
+                                      */}
                                       <h2 className="is-title post-title">
                                         <Link
                                           href="/details/"
@@ -136,6 +138,7 @@ const FeaturedInfo = () => {
                                 <div className="content-wrap">
                                   <div className="content">
                                     <div className="post-meta post-meta-a meta-contrast has-below">
+                                      {/*
                                       <div className="post-meta-items meta-above">
                                         <span className="meta-item cat-labels">
                                           <Link
@@ -152,6 +155,7 @@ const FeaturedInfo = () => {
                                           </Link>
                                         </span>
                                       </div>
+                                      */}
                                       <h2 className="is-title post-title">
                                         <Link
                                           href="/details/"
@@ -226,6 +230,7 @@ const FeaturedInfo = () => {
                                 <div className="content-wrap">
                                   <div className="content">
                                     <div className="post-meta post-meta-a meta-contrast has-below">
+                                      {/*
                                       <div className="post-meta-items meta-above">
                                         <span className="meta-item cat-labels">
                                           <Link
@@ -242,6 +247,7 @@ const FeaturedInfo = () => {
                                           </Link>
                                         </span>
                                       </div>
+                                      */}
                                       <h2 className="is-title post-title">
                                         <Link
                                           href="/details/"

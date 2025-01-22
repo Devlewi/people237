@@ -39,6 +39,7 @@ const LatestPostVideoHome = () => {
                                         <span className="format-overlay c-overlay format-video p-center">
                                           <i className="tsi tsi-play" />
                                         </span>
+                                       {/*
                                         <span className="cat-labels cat-labels-overlay c-overlay p-bot-left">
                                           <Link
                                             href="/categorie/culture/"
@@ -49,6 +50,7 @@ const LatestPostVideoHome = () => {
                                             Vidéos
                                           </Link>
                                         </span>
+                                       */}
                                       </div>
                                       <div className="content">
                                         <div className="post-meta post-meta-a has-below">
@@ -124,6 +126,7 @@ const LatestPostVideoHome = () => {
                                         <span className="format-overlay c-overlay format-video p-center">
                                           <i className="tsi tsi-play" />
                                         </span>
+                                       {/*
                                         <span className="cat-labels cat-labels-overlay c-overlay p-bot-left">
                                           <Link
                                             href="/categorie/culture/"
@@ -134,6 +137,7 @@ const LatestPostVideoHome = () => {
                                             Vidéos
                                           </Link>
                                         </span>
+                                       */}
                                       </div>
                                       <div className="content">
                                         <div className="post-meta post-meta-a has-below">

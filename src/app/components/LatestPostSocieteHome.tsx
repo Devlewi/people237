@@ -31,6 +31,7 @@ const LatestPostSocieteHome = () => {
                                         <div className="content">
                                           <div className="post-meta post-meta-a meta-contrast has-below">
                                             <div className="post-meta-items meta-above">
+                                             {/*
                                               <span className="meta-item cat-labels">
                                                 <Link
                                                   href="/categorie/culture/"
@@ -41,6 +42,7 @@ const LatestPostSocieteHome = () => {
                                                   Société
                                                 </Link>
                                               </span>
+                                             */}
                                             </div>
                                             <h2 className="is-title post-title">
                                               <Link href="/details/">
@@ -101,6 +103,7 @@ const LatestPostSocieteHome = () => {
                                       <div className="content-wrap">
                                         <div className="content">
                                           <div className="post-meta post-meta-a meta-contrast has-below">
+                                           {/*
                                             <div className="post-meta-items meta-above">
                                               <span className="meta-item cat-labels">
                                                 <a
@@ -113,6 +116,7 @@ const LatestPostSocieteHome = () => {
                                                 </a>
                                               </span>
                                             </div>
+                                           */}
                                             <h2 className="is-title post-title">
                                               <Link href="/details/">
                                                 Orimo productions: Blaise Option

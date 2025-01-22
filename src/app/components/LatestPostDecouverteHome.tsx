@@ -41,6 +41,7 @@ const LatestPostDecouverteHome = () => {
                                             objectFit="cover"
                                           />
                                         </Link>
+                                        {/*
                                         <span className="cat-labels cat-labels-overlay c-overlay p-bot-left">
                                           <Link
                                             href="/categorie/culture/"
@@ -51,6 +52,7 @@ const LatestPostDecouverteHome = () => {
                                             Bons Plans
                                           </Link>
                                         </span>
+                                        */}
                                       </div>
                                       <div className="content">
                                         <div className="post-meta post-meta-a has-below">
@@ -120,7 +122,8 @@ const LatestPostDecouverteHome = () => {
                                             objectFit="cover"
                                           />
                                         </Link>
-                                        <span className="cat-labels cat-labels-overlay c-overlay p-bot-left">
+                                       {/*
+                                       <span className="cat-labels cat-labels-overlay c-overlay p-bot-left">
                                           <Link
                                             href="/categorie/culture/"
                                             className="category term-color-3"
@@ -130,6 +133,7 @@ const LatestPostDecouverteHome = () => {
                                             Bons Plans
                                           </Link>
                                         </span>
+                                       */}
                                       </div>
                                       <div className="content">
                                         <div className="post-meta post-meta-a has-below">
