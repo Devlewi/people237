@@ -116,7 +116,7 @@ const BottomNav = () => {
           onClick={() => handleTabClick('home')}
           style={{ marginBottom:-2}}
         />
-        <span style={{color:'white'}}>accueil</span>
+        <span style={{color:'#b0b0b0', fontWeight:700}}>accueil</span>
       </div>
 
       <div className={Styles.bnTab}>
@@ -126,7 +126,7 @@ const BottomNav = () => {
           onClick={() => handleTabClick('search')}
           style={{ marginBottom:-10}}
         />
-        <span style={{color:'white', fontWeight:700}}>chercher</span>
+        <span style={{color:'#b0b0b0', fontWeight:700}}>chercher</span>
       </div>
 
       {/* Icône pour le mode sombre */}
@@ -141,12 +141,12 @@ const BottomNav = () => {
           }}
         >
           {darkMode ? (
-            <FaRegMoon size="20" style={{ color: "#777", marginBottom:-10 }} />
+            <FaRegMoon size="20" style={{ color: "#fff", marginBottom:-10 }} />
           ) : (
-            <FaMoon size="20" style={{ color: "#fff", marginBottom:-10 }} />
+            <FaMoon size="20" style={{ color: "#777", marginBottom:-10 }} />
           )}
         </a>
-        <span style={{color:'white'}}>Mode</span>
+        <span style={{color:'#777', fontWeight:700}}>mode</span>
       </div>
     </div>
   );
