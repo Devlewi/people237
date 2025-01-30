@@ -5,7 +5,7 @@ import HomePageContentComponent from "./components/HomePageContentComponent";
 
 
 export const metadata: Metadata = {
-  title: "PAGE ACCUEIL | PEOPLE 237",
+  title: "ACCUEIL | PEOPLE 237",
   description: "Page Accueil PEOPLE 237, découvrez nos dernières actualités.",
   icons: {
     icon: "/favicon.ico",
