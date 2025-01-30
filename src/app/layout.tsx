@@ -90,7 +90,7 @@ export default function RootLayout({
       subMenu: []
     },
     {
-      title: "Galerie Photos side",
+      title: "Galerie Photos",
       icon: "typcn typcn-image",
       link: "/categorie/galerie-photos",
       subMenu: []
@@ -181,7 +181,7 @@ export default function RootLayout({
     {
       title: "People",
       icon: "typcn-home",
-      link: "#",
+      link: "/categorie/people",
       subMenu: [
         { title: "Camer", link: "/categorie/people-camer" },
         { title: "International", link: "/categorie/people-international" },
