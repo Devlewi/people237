@@ -32,12 +32,10 @@ export const metadata: Metadata = {
 // Fonction qui récupère les données côté serveur
 const fetchData = async () => {
   try {
-    const response = await fetch("https://controlpanel.people237.com/wp-json/articles/homepage", {
-      next: { revalidate: 60 },
-    }); // Remplacez par votre URL d'API
+    const response = await fetch("https://controlpanel.people237.com/wp-json/articles/homepage"); // Remplacez par votre URL d'API
     const data = await response.json();
-    //console.log("DATA RECUPEREE :");
-    //console.log(data.alaune);
+    console.log("DATA RECUPEREE :");
+    console.log(data.alaune);
     return data;
   } catch (error) {
     console.error("Erreur lors de la récupération des données API", error);
@@ -64,7 +62,7 @@ export default async function Home() {
           <FeaturedInfo alauneData={data.alaune || []} />
 
         {/* Passer les données à HomePageContentComponent */}
-        <HomePageContentComponent recapData={data.recap || {}}/>
+        <HomePageContentComponent recapData={data.recap || {}} />
 
     </div>
   )

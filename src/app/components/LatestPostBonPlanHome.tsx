@@ -1,7 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
+import { format } from "date-fns";
+import { fr } from "date-fns/locale"; // Pour la langue française
+import he from "he";
+import { removeTags } from "@/utils/removeTags";
+import { formatNumber } from "@/utils/formatedNumber";
 
-const LatestPostBonPlanHome = () => {
+type Article = {
+  id: number;
+  title: string;
+  excerpt: string;
+  link: string;
+  featured_image: string;
+  views: number;
+  date_published: string; // Précise que c'est une chaîne de caractères
+  slug: string;
+  author: string;
+};
+
+type LatestPostBonPlanHomeProps = {
+  articlesbonplan: Article[];
+};
+
+const LatestPostBonPlanHome: React.FC<LatestPostBonPlanHomeProps> = ({
+  articlesbonplan,
+}) => {
+
   return (
     <>
     <section
@@ -24,171 +48,85 @@ const LatestPostBonPlanHome = () => {
                                   </h4>
                                 </div>
                                 <div className="block-content">
-                                  <div className="loop loop-grid loop-grid-base grid grid-2 md:grid-2 xs:grid-1">
-                                    <article className="l-post grid-post grid-base-post">
-                                      <div className="media">
-                                        <Link
-                                          href="/details/"
-                                          className="image-link media-ratio ratio-16-9"
-                                          title="Ryan Reynolds, Blake Lively Arrive at Film Festival"
-                                        >
-                                          <Image
-                                            src="https://people237.com/wp-content/uploads/2024/12/rosine-nguemgaing-film-people237.jpg"
-                                            alt="Image de coco lago"
-                                            layout="intrinsic"
-                                            width={377}
-                                            height={377} // Vous pouvez ajuster la hauteur en fonction du ratio
-                                            objectFit="cover"
-                                          />
-                                        </Link>
-                                       {/*
-                                        <span className="cat-labels cat-labels-overlay c-overlay p-bot-left">
-                                          <Link
-                                            href="/categorie/culture/"
-                                            className="category term-color-3"
-                                            rel="category"
-                                            tabIndex={-1}
-                                          >
-                                            Bons Plans
-                                          </Link>
-                                        </span>
-                                       */}
-                                      </div>
-                                      <div className="content">
-                                        <div className="post-meta post-meta-a has-below">
-                                          <h2 className="is-title post-title">
-                                            <Link
-                                              href="/details/"
-                                              className="post-title-2"
-                                            >
-                                              Classe à part: le film de
-                                              Nguemgaing Rosine sera projeté
-                                            </Link>
-                                          </h2>
-                                          <div className="post-meta-items meta-below">
-                                            <span className="meta-item post-author">
-                                              <span className="by">Par</span>{" "}
-                                              <a
-                                                href="#"
-                                                title="Posts by Shane Doe"
-                                                rel="author"
-                                              >
-                                                Florine{" "}
-                                                <i
-                                                  className="typcn typcn-user"
-                                                  style={{
-                                                    fontSize: 15,
-                                                    color: "gray",
-                                                  }}
-                                                />
-                                              </a>
-                                            </span>
-                                            <span className="meta-item has-next-icon date">
-                                              <span className="date-link">
-                                                <time
-                                                  className="post-date"
-                                                  dateTime="2021-01-14T17:47:35+00:00"
-                                                >
-                                                  jeudi, 26 décembre 2024
-                                                </time>
-                                              </span>
-                                            </span>
-                                          </div>
-                                        </div>
-                                        <div className="excerpt">
-                                          <p>
-                                            L&apos;actrice présente son nouveau film
-                                            ce soir à Douala. Un événement très
-                                            attendu par les fans de cinéma, et
-                                            où, plusieurs acteurs seront
-                                            présents. La…
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </article>
-                                    <article className="l-post grid-post grid-base-post">
-                                      <div className="media">
-                                        <Link
-                                          href="/details/"
-                                          className="image-link media-ratio ratio-16-9"
-                                          title="Ryan Reynolds, Blake Lively Arrive at Film Festival"
-                                        >
-                                          <Image
-                                            src="https://people237.com/wp-content/uploads/2024/12/rosine-nguemgaing-film-people237.jpg"
-                                            alt="Image de coco lago"
-                                            layout="intrinsic"
-                                            width={377}
-                                            height={377} // Vous pouvez ajuster la hauteur en fonction du ratio
-                                            objectFit="cover"
-                                          />
-                                        </Link>
-                                            {/*
-                                        <span className="cat-labels cat-labels-overlay c-overlay p-bot-left">
-                                          <Link
-                                            href="/categorie/culture/"
-                                            className="category term-color-3"
-                                            rel="category"
-                                            tabIndex={-1}
-                                          >
-                                            Bons Plans
-                                          </Link>
-                                        </span>
-                                       */}
-                                      </div>
-                                      <div className="content">
-                                        <div className="post-meta post-meta-a has-below">
-                                          <h2 className="is-title post-title">
-                                            <Link
-                                              href="/details/"
-                                              className="post-title-2"
-                                            >
-                                              Classe à part: le film de
-                                              Nguemgaing Rosine sera projeté
-                                            </Link>
-                                          </h2>
-                                          <div className="post-meta-items meta-below">
-                                            <span className="meta-item post-author">
-                                              <span className="by">Par</span>{" "}
-                                              <a
-                                                href="#"
-                                                title="Posts by Shane Doe"
-                                                rel="author"
-                                              >
-                                                Florine{" "}
-                                                <i
-                                                  className="typcn typcn-user"
-                                                  style={{
-                                                    fontSize: 15,
-                                                    color: "gray",
-                                                  }}
-                                                />
-                                              </a>
-                                            </span>
-                                            <span className="meta-item has-next-icon date">
-                                              <span className="date-link">
-                                                <time
-                                                  className="post-date"
-                                                  dateTime="2021-01-14T17:47:35+00:00"
-                                                >
-                                                  jeudi, 26 décembre 2024
-                                                </time>
-                                              </span>
-                                            </span>
-                                          </div>
-                                        </div>
-                                        <div className="excerpt">
-                                          <p>
-                                            L&apos;sactrice présente son nouveau film
-                                            ce soir à Douala. Un événement très
-                                            attendu par les fans de cinéma, et
-                                            où, plusieurs acteurs seront
-                                            présents. La…
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </article>
-                                  </div>
-                                </div>
+          <div className="loop loop-grid loop-grid-base grid grid-2 md:grid-2 xs:grid-1">
+            {articlesbonplan.map((article) => (
+              <article
+                className="l-post grid-post grid-base-post"
+                key={article.id}
+              >
+                <div className="media">
+                  <Link
+                    href={{
+                      pathname: `/${article.slug}`, // URL dynamique
+                    }}
+                    className="image-link media-ratio ratio-16-9"
+                    title="Coco lago fait l’éloge de Coco Argenté"
+                  >
+                    <Image
+                      src={article.featured_image}
+                      alt={article.title}
+                      layout="intrinsic"
+                      width={377}
+                      height={377}
+                      objectFit="cover"
+                    />
+                  </Link>
+                  <span className="cat-labels cat-labels-overlay c-overlay p-bot-left">
+                    <Link
+                      href="/categorie/culture/"
+                      className="category term-color-3"
+                      rel="category"
+                      tabIndex={-1}
+                    >
+                      {formatNumber(article.views,'fr-FR')} vues
+                    </Link>
+                  </span>
+                </div>
+                <div className="content">
+                  <div className="post-meta post-meta-a has-below">
+                    <h2 className="is-title post-title">
+                      <Link 
+                      href={{
+                        pathname: `/${article.slug}`, // URL dynamique
+                      }}
+                      className="post-title-2">
+                        {he.decode(article.title)}
+                      </Link>
+                    </h2>
+                    <div className="post-meta-items meta-below">
+                      <span className="meta-item post-author">
+                        <span className="by">
+                          Le{" "}
+                          {format(
+                            new Date(article.date_published),
+                            "d MMMM yyyy",
+                            {
+                              locale: fr,
+                            }
+                          )}{" "}
+                          par{" "}
+                        </span>{" "}
+                        <a href="#" title="Posts by Shane Doe" rel="author">
+                          <i
+                            className="typcn typcn-user"
+                            style={{
+                              fontSize: 15,
+                              color: "gray",
+                            }}
+                          />{" "}
+                          {article.author}
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                  <div className="excerpt">
+                    <p>{removeTags(he.decode(article.excerpt))}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
                               </section>
     </>
   )}

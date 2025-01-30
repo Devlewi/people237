@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import LatestPostPeopleHome from "./LatestPostPeopleHome";
 import Banner728x80Home from "./Banner728x80Home";
 import LatestPostPortraitHome from "./LatestPostPortraitHome";
@@ -14,8 +15,34 @@ import LatestPostDecouverteHome from "./LatestPostDecouverteHome";
 import SidebarDeuxHome from "./SidebarDeuxHome";
 
 
-const HomePageContentComponent = () => {
 
+// Définir les props attendues, ici "recapData" qui contient les catégories d'articles.
+interface HomePageContentComponentProps {
+  recapData: {
+    articles: {
+      [key: string]: Array<{
+        id: number;
+        title: string;
+        excerpt: string;
+        link: string;
+        featured_image: string;
+        views: number;
+        date_published: string ,
+        slug: string,
+        author:string,
+      }>;
+    };
+    mostviewed: any[];
+    latestposts: any[];
+  };
+}
+
+
+const HomePageContentComponent: React.FC<HomePageContentComponentProps> = ({ recapData }) => {
+const { articles,latestposts,mostviewed } = recapData;
+
+//console.log("recapData.latestposts");
+//console.log(latestposts);
 
   return (
     <>
@@ -45,7 +72,8 @@ const HomePageContentComponent = () => {
                           >
                             <div className="elementor-widget-container">
                               {/* bloc de 4 articles peoples */}
-                              <LatestPostPeopleHome/>
+                              {/*<LatestPostPeopleHome/> */}
+                              <LatestPostPeopleHome articlespeople={articles['people'] || []} />                              
                             </div>
                           </div>
                           {/* espace publicitaire */}
@@ -75,17 +103,18 @@ const HomePageContentComponent = () => {
                             data-element_type="widget"
                             data-widget_type="smartmag-postslist.default"
                           >
-                            <div className="elementor-widget-container">
-                              <LatestPostPortraitHome/>
+                            <div className="elementor-widget-container">                            
+                              <LatestPostPortraitHome articlesportrait={articles['people-portrait'] || []} />                              
+                              <br />
+                              <br />                              
+                              {/*<LatestPostEventHome/>*/}
+                              <LatestPostEventHome articlesevent={articles['events'] || []} />
                               <br />
                               <br />
-                              <LatestPostEventHome/>
+                              <LatestPostDecouverteHome articlesdecouvertes={articles['decouvertes'] || []} />                                                            
                               <br />
                               <br />
-                              <LatestPostDecouverteHome/>                                                            
-                              <br />
-                              <br />
-                              <LatestPostBonPlanHome/>
+                              <LatestPostBonPlanHome articlesbonplan={articles['bons-plans'] || []} />                                                            
                             </div>
                           </div>
                         </div>
@@ -104,8 +133,8 @@ const HomePageContentComponent = () => {
                             data-element_type="widget"
                             data-widget_type="smartmag-highlights.default"
                           >
-                            <div className="elementor-widget-container">                              
-                              <SidebarUnHome/>
+                            <div className="elementor-widget-container">                                                     
+                              <SidebarUnHome articlesidebarunhome={latestposts || []}/>
                             </div>
                           </div>
                         </div>
@@ -135,7 +164,7 @@ const HomePageContentComponent = () => {
                             data-widget_type="smartmag-overlay.default"
                           >
                             <div className="elementor-widget-container">
-                              <LatestPostTopStarHome/>
+                              <LatestPostTopStarHome articlestopstar={articles['top-stars'] || []}/>
                             </div>
                           </div>
 
@@ -197,7 +226,7 @@ const HomePageContentComponent = () => {
                             data-widget_type="smartmag-overlay.default"
                           >
                             <div className="elementor-widget-container">
-                              <LatestPostSocieteHome/>
+                              <LatestPostSocieteHome articlesociete={articles['societes'] || []}/>                              
                             </div>
                           </div>
                           <div
@@ -219,7 +248,7 @@ const HomePageContentComponent = () => {
                             data-widget_type="smartmag-grid.default"
                           >
                             <div className="elementor-widget-container">
-                              <LatestPostSportHome/>
+                              <LatestPostSportHome articlesport={articles['sport'] || []}/>
                             </div>
                           </div>
                         </div>
@@ -254,8 +283,8 @@ const HomePageContentComponent = () => {
                                 data-id={24}
                                 data-block='{"id":"grid","props":{"cat_labels":1,"cat_labels_pos":"bot-left","reviews":"radial","post_formats_pos":"center","load_more_style":"a","meta_cat_style":"text","media_style_shadow":0,"meta_sponsor":1,"meta_sponsor_logo":0,"meta_sponsor_label":"Sponsor: {sponsor}","meta_above":[],"meta_below":["author","date","comments"],"meta_sponsor_above":[],"meta_sponsor_below":["sponsor","date"],"media_ratio":"","media_ratio_custom":"","read_more":"none","content_center":0,"posts":6,"pagination":"1","pagination_type":"load-more","space_below":"none","container_width":66,"heading_colors":"force","heading":"*Latest* Posts","excerpt_length":15,"meta_sponsor_items_default":true,"query_type":"custom","sort_days":null,"carousel_dots":null,"is_sc_call":true,"meta_items_default":true}}'
                               >
-                              <LatestPostGalerieHome/>
-                              <LatestPostVideoHome/>
+                              <LatestPostGalerieHome articlegalery={articles['galerie-photo'] || []}/>
+                              <LatestPostVideoHome articlevideo={articles['videos'] || []}/>
                               
                               </section>
                             </div>
@@ -276,7 +305,7 @@ const HomePageContentComponent = () => {
                             data-widget_type="smartmag-highlights.default"
                           >
                             <div className="elementor-widget-container">
-                              <SidebarDeuxHome/>
+                              <SidebarDeuxHome articlesidebardeuxhome={mostviewed || []}/>
                             </div>
                           </div>
                           <NewsleterComponent/>                                                    

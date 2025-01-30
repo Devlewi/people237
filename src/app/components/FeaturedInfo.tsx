@@ -1,7 +1,28 @@
 import Image from "next/image";
+import { format } from "date-fns";
+import { fr } from "date-fns/locale"; // Pour la langue française
+import he from "he";
+import { formatNumber } from "@/utils/formatedNumber";
 import Link from "next/link";
 
-const FeaturedInfo = () => {
+// Définir l'interface des props, ici on attend une prop 'alauneData' qui est un tableau
+interface FeaturedInfoProps {
+  alauneData: {
+    id: number;
+    title: string;
+    excerpt: string;
+    link: string;
+    featured_image: string;
+    views: number;
+    date_published: string; // Précise que c'est une chaîne de caractères
+    slug: string; // Précise que c'est une chaîne de caractères
+    author: string;
+  }[];
+}
+
+// Fonction pour enlever les balises HTML du texte
+
+const FeaturedInfo: React.FC<FeaturedInfoProps> = ({ alauneData }) => {
   return (
     <>
       <section
@@ -32,83 +53,85 @@ const FeaturedInfo = () => {
                         <div className="slides" data-parallax="">
                           <div className="items-wrap slide-wrap">
                             <div className="item item-large item-main item-1 pos-bot">
+                              {/* Premier article */}
                               <article className="l-post grid-overlay grid-overlay-a hover-zoom">
                                 <div className="media">
                                   <Link
-                                    href="/details/"
+                                     href={{
+                                      pathname: `/${alauneData[0].slug}`, // URL dynamique
+                                    }}
                                     className="image-link"
-                                    title="Petit Malo s’est marié!																				"
+                                    title={alauneData[0].title}
                                   >
-                                  
-<Image
-  src="/images/im1.png"
-  alt="Description of the image"
-  width={1024}
-  height={705}
-  className="bg-cover wp-post-image attachment-bunyad-feat-grid-lg-vw size-bunyad-feat-grid-lg-vw no-lazy skip-lazy"  
-/>
-{/*   */}
-                                    
+                                    <Image
+                                      src={alauneData[0].featured_image}
+                                      alt={alauneData[0].title}
+                                      width={1024}
+                                      height={705}
+                                      className="bg-cover wp-post-image attachment-bunyad-feat-grid-lg-vw size-bunyad-feat-grid-lg-vw no-lazy skip-lazy"
+                                    />
                                   </Link>
                                 </div>
                                 <div className="content-wrap">
                                   <div className="content">
                                     <div className="post-meta post-meta-a meta-contrast has-below">
-                                      {/*
-                                      <div className="post-meta-items meta-above">
-                                        <span className="meta-item cat-labels">
-                                          <Link
-                                            href="/categorie/culture"
-                                            style={{
-                                              backgroundColor:
-                                                "#cc8d25 !important",
-                                            }}
-                                            className="category term-color-2"
-                                            rel="category"
-                                            tabIndex={-1}
-                                          >
-                                            Top stars
-                                          </Link>
-                                        </span>
-                                      </div>
-                                      */}
+                                    <div className="post-meta-items meta-above">
+  <span className="meta-item cat-labels">
+    <a
+      href=""
+      style={{ backgroundColor: "#cc8d25 !important" }}
+      className="category term-color-2"
+      rel="category"
+      tabIndex={-1}
+    >
+      {formatNumber(alauneData[0].views,'fr-FR')} vues
+    </a>
+  </span>
+</div>
+                                      
                                       <h2 className="is-title post-title">
                                         <Link
-                                          href="/details/"
-                                          style={{
-                                            cursor: "pointer",
+                                          href={{
+                                            pathname: `/${alauneData[0].slug}`, // URL dynamique
                                           }}
+                                          style={{ cursor: "pointer" }}
                                         >
-                                          Petit Malo s’est marié!
+                                          {he.decode(alauneData[0].title)}
                                         </Link>
                                       </h2>
-                                      <div className="post-meta-items meta-below">
-                                        <span className="meta-item post-author">
-                                          <a
-                                            href="#"
-                                            title="Posts by Shane Doe"
-                                            rel="author"
-                                          >
-                                            Par Florine{" "}
-                                            <i
-                                              className="typcn typcn-user"
-                                              style={{
-                                                fontSize: 15,
-                                                color: "gray",
-                                              }}
-                                            />
-                                          </a>
+                                      <div
+                                        style={{
+                                          color: "white",
+                                          fontWeight: 700,
+                                        }}
+                                      >
+                                        Le{" "}
+                                        {format(
+                                          new Date(
+                                            alauneData[0].date_published
+                                          ),
+                                          "d MMMM yyyy",
+                                          { locale: fr }
+                                        )}{" "}
+                                        par{" "}
+                                        <i
+                                          className="typcn typcn-user"
+                                          style={{
+                                            fontSize: 15,
+                                            color: "gray",
+                                          }}
+                                        />{" "}
+                                        {alauneData[0].author}
+                                        {/*
+                                        <span
+                                          className="views-count"
+                                          style={{
+                                            color: "#dc9002",
+                                            fontWeight: 700,
+                                          }}
+                                        >
                                         </span>
-                                        <span className="meta-item date">
-                                          <span className="date-link">
-                                            <time
-                                              className="post-date"
-                                              dateTime="2021-01-13T18:04:49+00:00"
-                                            >
-                                              02 Janv 2025
-                                            </time>
-                                          </span>
-                                        </span>
+                                        */}
                                       </div>
                                     </div>
                                   </div>
@@ -116,83 +139,84 @@ const FeaturedInfo = () => {
                               </article>
                             </div>
                             <div className="item item-medium item-2 pos-bot">
+                              {/* Deuxième article */}
                               <article className="l-post grid-overlay grid-overlay-a hover-zoom">
                                 <div className="media">
                                   <Link
-                                    href="/details/"
+                                    href={{
+                                      pathname: `/${alauneData[1].slug}`, // URL dynamique
+                                    }}
                                     className="image-link"
-                                    title="Classe à part: le film de Nguemgaing Rosine sera projeté ce soir à Douala"
+                                    title={alauneData[1].title}
                                   >
- 
-
-<Image
-  src="/images/im3.png"
-  alt="Description of the image"
-  width={1024}
-  height={705}
-  className="bg-cover wp-post-image attachment-bunyad-feat-grid-lg-vw size-bunyad-feat-grid-lg-vw no-lazy skip-lazy"
-/>
-{/* img img-responsive img-fluid bg-cover wp-post-image attachment-bunyad-feat-grid-lg-vw size-bunyad-feat-grid-lg-vw no-lazy skip-lazy */}
+                                    <Image
+                                      src={alauneData[1].featured_image}
+                                      alt={alauneData[1].title}
+                                      width={1024}
+                                      height={705}
+                                      className="bg-cover wp-post-image attachment-bunyad-feat-grid-lg-vw size-bunyad-feat-grid-lg-vw no-lazy skip-lazy"
+                                    />
                                   </Link>
                                 </div>
                                 <div className="content-wrap">
                                   <div className="content">
                                     <div className="post-meta post-meta-a meta-contrast has-below">
-                                      {/*
-                                      <div className="post-meta-items meta-above">
-                                        <span className="meta-item cat-labels">
-                                          <Link
-                                            href="/categorie/culture"
-                                            className="category term-color-11"
-                                            rel="category"
-                                            tabIndex={-1}
-                                            style={{
-                                              backgroundColor:
-                                                "#cc8d25 !important",
-                                            }}
-                                          >
-                                            Event
-                                          </Link>
-                                        </span>
-                                      </div>
-                                      */}
+
+                                    <div className="post-meta-items meta-above">
+  <span className="meta-item cat-labels">
+    <a
+      href="categorie-article.html"
+      style={{ backgroundColor: "#cc8d25 !important" }}
+      className="category term-color-2"
+      rel="category"
+      tabIndex={-1}
+    >
+       {formatNumber(alauneData[1].views,'fr-FR')} vues
+    </a>
+  </span>
+</div>
+
                                       <h2 className="is-title post-title">
                                         <Link
-                                          href="/details/"
-                                          style={{
-                                            cursor: "pointer",
+                                          href={{
+                                            pathname: `/${alauneData[1].slug}`, // URL dynamique
                                           }}
+                                          style={{ cursor: "pointer" }}
                                         >
-                                          Classe à part: le film de Nguemgaing
-                                          Rosine sera projeté ce soir à Douala
+                                          {he.decode(alauneData[1].title)}
                                         </Link>
                                       </h2>
-                                      <div className="post-meta-items meta-below">
-                                        <span className="meta-item post-author">
-                                          <a
-                                            href="#"
-                                            title="Posts by Shane Doe"
-                                            rel="author"
-                                          >
-                                            Par Florine{" "}
-                                            <i
-                                              className="typcn typcn-user"
-                                              style={{
-                                                fontSize: 15,
-                                                color: "gray",
-                                              }}
-                                            />
-                                          </a>
-                                        </span>
-                                        <span className="meta-item date">
-                                          <span className="date-link">
-                                            <time
-                                              className="post-date"
-                                              dateTime="2021-01-13T18:03:00+00:00"
-                                            >
-                                              02 Janv 2025{" "}
-                                            </time>
-                                          </span>
+                                      <div
+                                        style={{
+                                          color: "white",
+                                          fontWeight: 700,
+                                        }}
+                                      >
+                                        Le{" "}
+                                        {format(
+                                          new Date(
+                                            alauneData[1].date_published
+                                          ),
+                                          "d MMMM yyyy",
+                                          { locale: fr }
+                                        )}{" "}
+                                        par{" "}
+                                        <i
+                                          className="typcn typcn-user"
+                                          style={{
+                                            fontSize: 15,
+                                            color: "gray",
+                                          }}
+                                        />{" "}
+                                        {alauneData[1].author}
+                                        <span
+                                          className="views-count"
+                                          style={{
+                                            color: "#dc9002",
+                                            fontWeight: 700,
+                                          }}
+                                        >
+                                          {/* vues : {alauneData[1].views}{" "} */}
                                         </span>
                                       </div>
                                     </div>
@@ -201,91 +225,76 @@ const FeaturedInfo = () => {
                               </article>
                             </div>
                             <div className="item item-medium item-3 pos-bot">
+                              {/* Troisième article */}
                               <article className="l-post grid-overlay grid-overlay-a hover-zoom">
                                 <div className="media">
                                   <Link
-                                    href="/details/"
+                                    href={{
+                                      pathname: `/${alauneData[2].slug}`, // URL dynamique
+                                    }}
                                     className="image-link"
-                                    title="Nguemgaing Rosine: succès total pour son film « classe à part »"
+                                    title={alauneData[2].title}
                                   >
-                                   {/*
- <span
-                                      data-bgsrc="images/im2.png"
-                                      className="img bg-cover wp-post-image attachment-bunyad-feat-grid-lg-vw size-bunyad-feat-grid-lg-vw no-lazy skip-lazy"
-                                      data-bgset="images/im2.png"
-                                      data-sizes="(max-width: 960px) 100vw, 960px"
-                                      data-ratio="1.4528944381385"
-                                    />                                   
-                                   */}
-
-<Image
-  src="/images/im2.png"
-  alt="Description of the image"
-  width={1024}
-  height={705}
-  className="bg-cover wp-post-image attachment-bunyad-feat-grid-lg-vw size-bunyad-feat-grid-lg-vw no-lazy skip-lazy"
-/>                                    
+                                    <Image
+                                      src={alauneData[2].featured_image}
+                                      alt={alauneData[2].title}
+                                      width={1024}
+                                      height={705}
+                                      className="bg-cover wp-post-image attachment-bunyad-feat-grid-lg-vw size-bunyad-feat-grid-lg-vw no-lazy skip-lazy"
+                                    />
                                   </Link>
                                 </div>
                                 <div className="content-wrap">
                                   <div className="content">
                                     <div className="post-meta post-meta-a meta-contrast has-below">
-                                      {/*
-                                      <div className="post-meta-items meta-above">
-                                        <span className="meta-item cat-labels">
-                                          <Link
-                                            href="/categorie/culture"
-                                            style={{
-                                              backgroundColor:
-                                                "#cc8d25 !important",
-                                            }}
-                                            className="category term-color-10"
-                                            rel="category"
-                                            tabIndex={-1}
-                                          >
-                                            People
-                                          </Link>
-                                        </span>
-                                      </div>
-                                      */}
+                                    <div className="post-meta-items meta-above">
+  <span className="meta-item cat-labels">
+    <a
+      href=""
+      style={{ backgroundColor: "#cc8d25 !important" }}
+      className="category term-color-2"
+      rel="category"
+      tabIndex={-1}
+    >
+       {formatNumber(alauneData[2].views,'fr-FR')} vues
+    </a>
+  </span>
+</div>
+
                                       <h2 className="is-title post-title">
                                         <Link
-                                          href="/details/"
-                                          style={{
-                                            cursor: "pointer",
+                                          href={{
+                                            pathname: `/${alauneData[2].slug}`, // URL dynamique
                                           }}
+                                          style={{ cursor: "pointer" }}
                                         >
-                                          Nguemgaing Rosine: succès total pour
-                                          son film « classe à part »
+                                          {he.decode(alauneData[2].title)}
                                         </Link>
                                       </h2>
-                                      <div className="post-meta-items meta-below">
-                                        <span className="meta-item post-author">
-                                          <a
-                                            href="#"
-                                            title="Posts by Shane Doe"
-                                            rel="author"
-                                          >
-                                            Par Florine{" "}
-                                            <i
-                                              className="typcn typcn-user"
-                                              style={{
-                                                fontSize: 15,
-                                                color: "gray",
-                                              }}
-                                            />
-                                          </a>
-                                        </span>
-                                        <span className="meta-item date">
-                                          <span className="date-link">
-                                            <time
-                                              className="post-date"
-                                              dateTime="2021-01-13T15:46:07+00:00"
-                                            >
-                                              02 Janv 2024{" "}
-                                            </time>
-                                          </span>
-                                        </span>
+                                      <div
+                                        style={{
+                                          color: "white",
+                                          fontWeight: 700,
+                                        }}
+                                      >
+                                        Le{" "}
+                                        {format(
+                                          new Date(
+                                            alauneData[2].date_published
+                                          ),
+                                          "d MMMM yyyy",
+                                          { locale: fr }
+                                        )}{" "}
+                                        par{" "}
+                                        <i
+                                          className="typcn typcn-user"
+                                          style={{
+                                            fontSize: 15,
+                                            color: "gray",
+                                          }}
+                                        />{" "}
+                                        {alauneData[2].author} 
+                                        
                                       </div>
                                     </div>
                                   </div>

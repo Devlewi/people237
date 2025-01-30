@@ -1241,3 +1241,21 @@ constat d enregistemet avec id=0)
 nettoyage plugins (retirer les plugins inutiles), mettre a jours les plugins 
 obsolete, retenir que les plugins necessaires et indispensables
 
+
+
+
+
+==== structure du projet NEXT JS
+src
+    app        
+        page.tsx
+        page.module.css
+        layout.tsx
+        global.css        
+        components
+        articles
+            page.tsx 
+        categories
+            [culture]
+                page.tsx             
+        

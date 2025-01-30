@@ -1737,8 +1737,7 @@ input[type=button]:active {
 
 .grid {
     display: grid;
-    grid-column-gap: 13px;
-    /* grid-column-gap: var(--grid-gutter); */
+    grid-column-gap: var(--grid-gutter);
     grid-row-gap: var(--grid-row-gap, 0);
 }
 
@@ -6921,21 +6920,3 @@ article{
         text-align: justify;
     }
     */
-
-
-    .l-post img{
-        height: 100% !important;
-    }
-
-
-    .cat-labels a, .cat-labels .category{
-        margin-top: 4px !important;
-    }
-
-    /* Style pour le bouton disabled */
-.disabled {
-    pointer-events: none; /* Empêche toute interaction avec l'élément */
-    opacity: 0.5; /* Diminue l'opacité pour donner un aspect grisé */
-    cursor: not-allowed; /* Change le curseur pour indiquer que l'élément est désactivé */
-  }
-  

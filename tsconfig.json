@@ -20,7 +20,10 @@
     ],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "strictFunctionTypes": false, // Ajout de cette option pour éviter des problèmes liés aux types de fonction asynchrones
+    "skipDefaultLibCheck": true, // Permet de contourner certains problèmes liés aux types
+    "downlevelIteration": true // Pour assurer que les itérations sur les promesses et objets fonctionnent correctement
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

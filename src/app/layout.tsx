@@ -13,8 +13,6 @@ import BottomMenu from "./components/BottomMenu";
 import Image from "next/image";
 import TransitionPage from "./components/TransitionPage";
 
-
-
 //import $ from "jquery"; // Importer jQuery directement
 
 export default function RootLayout({
@@ -22,10 +20,225 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   const [isTransitioning, setIsTransitioning] = useState(false);
   const pathname = usePathname(); // Utilisez le hook pour détecter les changements de route
 
+  const menuItems = [
+    {
+      title: "People",
+      icon: "typcn typcn-home",
+      link: "/",
+      subMenu: [
+        { title: "Camer", link: "/categorie/people-camer" },
+        { title: "International", link: "/categorie/people-international" },
+        { title: "Buzz", link: "/categorie/people-buzz" }
+      ]
+    },
+    {
+      title: "Portraits",
+      icon: "typcn typcn-camera",
+      link: "/categorie/people-portrait",
+      subMenu: []
+    },
+    {
+      title: "Events",
+      icon: "typcn typcn-calendar",
+      link: "/categorie/events",
+      subMenu: [
+        { title: "Concerts", link: "/categorie/events-concerts" },
+        { title: "Festival", link: "/categorie/events-festivals" }
+      ]
+    },
+    {
+      title: "Découverte",
+      icon: "typcn typcn-camera",
+      link: "#",
+      subMenu: [
+        { title: "Cinéma/art", link: "/categorie/decouverte-cinema-arts" },
+        { title: "Cuisine", link: "/categorie/decouverte-cuisine" },
+        { title: "Littérature", link: "/categorie/decouverte-litterature" },
+        { title: "Mode", link: "/categorie/decouverte-mode" },
+        { title: "Santé – bien être", link: "/categorie/decouverte-sante-et-bien-etre" }
+      ]
+    },
+    {
+      title: "Bons plans",
+      icon: "typcn typcn-star",
+      link: "#",
+      subMenu: [
+        { title: "Restaurant", link: "/categorie/bons-plans-restaurants" },
+        { title: "Party", link: "/categorie/bons-plans-party-after-work" },
+        { title: "Tourisme", link: "/categorie/bons-plans-tourisme" }
+      ]
+    },
+    {
+      title: "Top stars",
+      icon: "typcn typcn-star-outline",
+      link: "/categorie/top-stars",
+      subMenu: []
+    },
+    {
+      title: "Société",
+      icon: "typcn typcn-world",
+      link: "/categorie/societes",
+      subMenu: []
+    },
+    {
+      title: "Sports",
+      icon: "typcn typcn-flag",
+      link: "/categorie/sport",
+      subMenu: []
+    },
+    {
+      title: "Galerie Photos side",
+      icon: "typcn typcn-image",
+      link: "/categorie/galerie-photos",
+      subMenu: []
+    },
+    {
+      title: "Vidéos",
+      icon: "typcn typcn-video",
+      link: "/categorie/videos",
+      subMenu: []
+    }
+  ];
+
+  const menuItemsD = [
+    {
+      title: "People",
+      icon: "typcn-home",
+      link: "/",
+      subMenu: [
+        { title: "Camer", link: "/categorie/people-camer" },
+        { title: "International", link: "/categorie/people-international" },
+        { title: "Buzz", link: "/categorie/people-buzz" }
+      ]
+    },
+    {
+      title: "Portraits",
+      icon: "typcn-camera",
+      link: "/categorie/people-portrait"
+    },
+    {
+      title: "Events",
+      icon: "typcn-calendar",
+      link: "/categorie/events",
+      subMenu: [
+        { title: "Concerts", link: "/categorie/events-concerts" },
+        { title: "Festival", link: "/categorie/events-festivals" }
+      ]
+    },
+    {
+      title: "Découverte",
+      icon: "typcn-camera",
+      link: "#",
+      subMenu: [
+        { title: "Cinéma/art", link: "/categorie/decouverte-cinema-arts" },
+        { title: "Cuisine", link: "/categorie/decouverte-cuisine" },
+        { title: "Littérature", link: "/categorie/decouverte-litterature" },
+        { title: "Mode", link: "/categorie/decouverte-mode" },
+        { title: "Santé – bien être", link: "/categorie/decouverte-sante-et-bien-etre" }
+      ]
+    },
+    {
+      title: "Bons plans",
+      icon: "typcn-star",
+      link: "#",
+      subMenu: [
+        { title: "Restaurant", link: "/categorie/bons-plans-restaurants" },
+        { title: "Party", link: "/categorie/bons-plans-party-after-work" },
+        { title: "Tourisme", link: "/categorie/bons-plans-tourisme" }
+      ]
+    },
+    {
+      title: "Top stars",
+      icon: "typcn-star-outline",
+      link: "/categorie/top-stars"
+    },
+    {
+      title: "Société",
+      icon: "typcn-world",
+      link: "/categorie/societes"
+    },
+    {
+      title: "Sports",
+      icon: "typcn-flag",
+      link: "/categorie/sport"
+    },
+    {
+      title: "Galerie Photos",
+      icon: "typcn-image",
+      link: "/categorie/galerie-photos"
+    },
+    {
+      title: "Vidéos",
+      icon: "typcn-video",
+      link: "/categorie/videos"
+    }
+  ];
+  
+  const scrollingMenuItems = [
+    {
+      title: "People",
+      icon: "typcn-home",
+      link: "#",
+      subMenu: [
+        { title: "Camer", link: "/categorie/people-camer" },
+        { title: "International", link: "/categorie/people-international" },
+        { title: "Buzz", link: "/categorie/people-buzz" }
+      ]
+    },
+    {
+      title: "Portraits",
+      icon: "typcn-camera",
+      link: "/categorie/people-portrait"
+    },
+    {
+      title: "Events",
+      icon: "typcn-calendar",
+      link: "/categorie/events",
+      subMenu: [
+        { title: "Concerts", link: "/categorie/events-concerts" },
+        { title: "Festival", link: "/categorie/events-festivals" }
+      ]
+    },
+    {
+      title: "Bons plans",
+      icon: "typcn-star",
+      link: "#",
+      subMenu: [
+        { title: "Restaurant", link: "/categorie/bons-plans-restaurants" },
+        { title: "Party", link: "/categorie/bons-plans-party-after-work" },
+        { title: "Tourisme", link: "/categorie/bons-plans-tourisme" }
+      ]
+    },
+    {
+      title: "Top stars",
+      icon: "typcn-star-outline",
+      link: "/categorie/top-stars"
+    },
+    {
+      title: "Société",
+      icon: "typcn-world",
+      link: "/categorie/societes"
+    },
+    {
+      title: "Sports",
+      icon: "typcn-flag",
+      link: "/categorie/sport"
+    },
+    {
+      title: "Galerie Photos",
+      icon: "typcn-image",
+      link: "/categorie/galerie-photos"
+    },
+    {
+      title: "Vidéos",
+      icon: "typcn-video",
+      link: "/categorie/videos"
+    }
+  ];
+  
   useEffect(() => {
     // Déclenchez l'animation lors d'un changement de route
     setIsTransitioning(true);
@@ -36,9 +249,6 @@ export default function RootLayout({
 
     return () => clearTimeout(timeout); // Nettoyez le timeout
   }, [pathname]);
-
-  
-
 
   // On simule un délai pour l'animation de chargement.
   /*
@@ -122,9 +332,8 @@ export default function RootLayout({
       const c = d.classList;
 
       // Sauvegarder la classe d'origine
-    //d.dataset.origClass = c;
+      //d.dataset.origClass = c;
       d.dataset.origClass = c.toString();
-
 
       // Appliquer ou supprimer les classes en fonction du thème
       if (scheme === "dark") {
@@ -389,17 +598,42 @@ export default function RootLayout({
                 </a>
                 <div className="ts-logo">
                   <Image
-                  src="/images/logo-people237.png"
-                  className="logo-mobile logo-image"
-                  width={198}
-                  height={56}
-                  alt="SmartMag GoodNews"
-                  />                  
+                    src="/images/logo-people237.png"
+                    className="logo-mobile logo-image"
+                    width={198}
+                    height={56}
+                    alt="SmartMag GoodNews"
+                  />
                 </div>
               </div>
               <div className="off-canvas-content">
-                <ul className="mobile-menu" />
-                <NewsleterComponentHeader/>
+                
+                {/*<ul className="mobile-menu" />*/}
+                {/* sidebar menu */}
+<ul className="mobile-menu">
+  {menuItems.map((menu, index) => (
+    <li key={index} className={`menu-item menu-item-type-custom ${menu.subMenu.length > 0 ? "menu-item-has-children" : ""}`}>
+      <Link href={menu.link}>
+        <i className={menu.icon} /> {menu.title}
+      </Link>
+      
+      {menu.subMenu.length > 0 && (
+        <ul className="sub-menu">
+          {menu.subMenu.map((subMenuItem, subIndex) => (
+            <li key={subIndex} className="menu-item menu-item-type-custom">
+              <Link href={subMenuItem.link}>{subMenuItem.title}</Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </li>
+  ))}
+</ul>
+
+                
+
+                
+                <NewsleterComponentHeader />
                 <div className="spc-social-block spc-social spc-social-b smart-head-social">
                   <a
                     href="#"
@@ -489,14 +723,13 @@ export default function RootLayout({
                       className="logo-link ts-logo logo-is-image"
                     >
                       <h1>
-
-                      <Image
-                  src="/images/logo-people237.png"
-                  className="logo-image"
-                  width={263}
-                  height={74}
-                  alt="SmartMag GoodNews"
-                  />                                                            
+                        <Image
+                          src="/images/logo-people237.png"
+                          className="logo-image"
+                          width={263}
+                          height={74}
+                          alt="SmartMag GoodNews"
+                        />
                       </h1>
                     </Link>
                   </div>
@@ -535,254 +768,26 @@ export default function RootLayout({
                     <div className="nav-wrap">
                       {/*menu desktop*/}
                       <nav className="navigation navigation-main nav-hov-a">
-                        <ul id="menu-main-menu" className="menu">
-                          <li
-                            id="menu-item-4334"
-                            className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-4334"
-                          >
-                            <a href="#">
-                              <i className="typcn typcn-home" /> People
-                            </a>
-                            <ul className="sub-menu">
-                              <li
-                                id="menu-item-4335"
-                                className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-4335"
-                              >
-                                <a
-                                  target="_blank"
-                                  rel="noopener"
-                                  href="#"
-                                >
-                                  Camer
-                                </a>
-                              </li>
-                              <li
-                                id="menu-item-4335"
-                                className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-4335"
-                              >
-                                <a
-                                  target="_blank"
-                                  rel="noopener"
-                                  href="#"
-                                >
-                                  International
-                                </a>
-                              </li>
-                              <li
-                                id="menu-item-4335"
-                                className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-4335"
-                              >
-                                <a
-                                  target="_blank"
-                                  rel="noopener"
-                                  href="#"
-                                >
-                                  Buzz
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li
-                            id="menu-item-4334"
-                            className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-4334"
-                          >
-                            <a href="#">
-                              <i className="typcn typcn-camera" /> Portraits
-                            </a>
-                          </li>
-                          <li
-                            id="menu-item-4334"
-                            className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-4334"
-                          >
-                            <a href="#">
-                              <i className="typcn typcn-calendar" /> Events
-                            </a>
-                            <ul className="sub-menu">
-                              <li
-                                id="menu-item-4335"
-                                className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-4335"
-                              >
-                                <a
-                                  target="_blank"
-                                  rel="noopener"
-                                  href="#1"
-                                >
-                                  Concerts
-                                </a>
-                              </li>
-                              <li
-                                id="menu-item-4335"
-                                className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-4335"
-                              >
-                                <a
-                                  target="_blank"
-                                  rel="noopener"
-                                  href="#2"
-                                >
-                                  Festival
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li
-                            id="menu-item-4334"
-                            className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-4334"
-                          >
-                            <a href="#">
-                              <i className="typcn typcn-camera" /> Découverte
-                            </a>
-                            <ul className="sub-menu">
-                              <li
-                                id="menu-item-4335"
-                                className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-4335"
-                              >
-                                <a
-                                  target="_blank"
-                                  rel="noopener"
-                                  href="#1"
-                                >
-                                  Cinéma/art
-                                </a>
-                              </li>
-                              <li
-                                id="menu-item-4335"
-                                className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-4335"
-                              >
-                                <a
-                                  target="_blank"
-                                  rel="noopener"
-                                  href="#2"
-                                >
-                                  Cuisine
-                                </a>
-                              </li>
-                              <li
-                                id="menu-item-4335"
-                                className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-4335"
-                              >
-                                <a
-                                  target="_blank"
-                                  rel="noopener"
-                                  href="#2"
-                                >
-                                  Littérature
-                                </a>
-                              </li>
-                              <li
-                                id="menu-item-4335"
-                                className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-4335"
-                              >
-                                <a
-                                  target="_blank"
-                                  rel="noopener"
-                                  href="#2"
-                                >
-                                  Mode
-                                </a>
-                              </li>
-                              <li
-                                id="menu-item-4335"
-                                className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-4335"
-                              >
-                                <a
-                                  target="_blank"
-                                  rel="noopener"
-                                  href="#2"
-                                >
-                                  Santé – bien être
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li
-                            id="menu-item-4334"
-                            className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-4334"
-                          >
-                            <a href="#">
-                              <i className="typcn typcn-star" /> Bons plans
-                            </a>
-                            <ul className="sub-menu">
-                              <li
-                                id="menu-item-4335"
-                                className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-4335"
-                              >
-                                <a
-                                  target="_blank"
-                                  rel="noopener"
-                                  href="#"
-                                >
-                                  Restaurant
-                                </a>
-                              </li>
-                              <li
-                                id="menu-item-4335"
-                                className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-4335"
-                              >
-                                <a
-                                  target="_blank"
-                                  rel="noopener"
-                                  href="#"
-                                >
-                                  Party
-                                </a>
-                              </li>
-                              <li
-                                id="menu-item-4335"
-                                className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-4335"
-                              >
-                                <a
-                                  target="_blank"
-                                  rel="noopener"
-                                  href="#"
-                                >
-                                  Tourisme
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li
-                            id="menu-item-4334"
-                            className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-4334"
-                          >
-                            <a href="#">
-                              <i className="typcn typcn-star-outline" /> Top
-                              stars
-                            </a>
-                          </li>
-                          <li
-                            id="menu-item-4334"
-                            className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-4334"
-                          >
-                            <a href="#">
-                              <i className="typcn typcn-world" /> Société
-                            </a>
-                          </li>
-                          <li
-                            id="menu-item-4334"
-                            className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-4334"
-                          >
-                            <a href="#">
-                              <i className="typcn typcn-flag" /> Sports
-                            </a>
-                          </li>
-                          <li
-                            id="menu-item-4334"
-                            className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-4334"
-                          >
-                            <a href="#">
-                              <i className="typcn typcn-image" /> Galerie Photos
-                            </a>
-                          </li>
-                          <li
-                            id="menu-item-4334"
-                            className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-4334"
-                          >
-                            <a href="#">
-                              <i className="typcn typcn-video" /> Vidéos
-                            </a>
-                          </li>
-                        </ul>
-                      </nav>
+      <ul id="menu-main-menu" className="menu">
+        {menuItemsD.map((item, index) => (
+          <li key={index} className={`menu-item ${item.subMenu ? "menu-item-has-children" : ""}`}>
+            <Link href={item.link}>
+              <i className={`typcn ${item.icon}`} /> {item.title}
+            </Link>
+            {item.subMenu && (
+              <ul className="sub-menu">
+                {item.subMenu.map((subItem, subIndex) => (
+                  <li key={subIndex} className="menu-item">
+                    <Link href={subItem.link}>{subItem.title}</Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+                      
                       {/*menu desktop*/}
                     </div>
                   </div>
@@ -809,7 +814,6 @@ export default function RootLayout({
                   </div>
                 </div>
               </div>
-
             </div>
             <div
               className="smart-head smart-head-a smart-head-mobile"
@@ -839,23 +843,19 @@ export default function RootLayout({
                       className="logo-link ts-logo logo-is-image"
                     >
                       <span>
-                      <Image
-                  src="/images/logo-people237.png"
-                  className="logo-mobile logo-image"
-                  width={198}
-                  height={56}                  
-                  alt="SmartMag GoodNews"
-                  />                                          
+                        <Image
+                          src="/images/logo-people237.png"
+                          className="logo-mobile logo-image"
+                          width={198}
+                          height={56}
+                          alt="SmartMag GoodNews"
+                        />
                       </span>
                     </Link>
                   </div>
 
                   <div className="items items-right ">
-                    <Link
-                      href="/recherche"
-                      className=""
-                      title="Search"
-                    >
+                    <Link href="/recherche" className="" title="Search">
                       <i className="tsi tsi-search" />
                     </Link>
                   </div>
@@ -867,101 +867,25 @@ export default function RootLayout({
                     <div className="nav-wrap">
                       {/*menu mobile*/}
                       <nav className="navigation navigation-scroll nav-hov-b">
-                        <ul id="menu-scrolling-menu-mobile" className="menu">
-                          <li className="menu-item menu-item-has-children">
-                            <a href="#">
-                              <i className="typcn typcn-home" /> People
-                            </a>
-                            <ul className="sub-menu">
-                              <li>
-                                <a target="_blank" rel="noopener" href="#">
-                                  Camer
-                                </a>
-                              </li>
-                              <li>
-                                <a target="_blank" rel="noopener" href="#">
-                                  International
-                                </a>
-                              </li>
-                              <li>
-                                <a target="_blank" rel="noopener" href="#">
-                                  Buzz
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li className="menu-item">
-                            <a href="#">
-                              <i className="typcn typcn-camera" /> Portraits
-                            </a>
-                          </li>
-                          <li className="menu-item menu-item-has-children">
-                            <a href="#">
-                              <i className="typcn typcn-calendar" /> Events
-                            </a>
-                            <ul className="sub-menu">
-                              <li>
-                                <a target="_blank" rel="noopener" href="#">
-                                  Concerts
-                                </a>
-                              </li>
-                              <li>
-                                <a target="_blank" rel="noopener" href="#">
-                                  Découvertes
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li className="menu-item menu-item-has-children">
-                            <a href="#">
-                              <i className="typcn typcn-star" /> Bons plans
-                            </a>
-                            <ul className="sub-menu">
-                              <li>
-                                <a target="_blank" rel="noopener" href="#">
-                                  Restaurant
-                                </a>
-                              </li>
-                              <li>
-                                <a target="_blank" rel="noopener" href="#">
-                                  Party
-                                </a>
-                              </li>
-                              <li>
-                                <a target="_blank" rel="noopener" href="#">
-                                  Tourisme
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li className="menu-item">
-                            <a href="top">
-                              <i className="typcn typcn-star-outline" /> Top
-                              stars
-                            </a>
-                          </li>
-                          <li className="menu-item">
-                            <a href="#">
-                              <i className="typcn typcn-world" /> Société
-                            </a>
-                          </li>
-                          <li className="menu-item">
-                            <a href="#">
-                              <i className="typcn typcn-flag" /> Sports
-                            </a>
-                          </li>
-                          <li className="menu-item">
-                            <a href="#">
-                              <i className="typcn typcn-image" /> Galerie Photos
-                            </a>
-                          </li>
-                          <li className="menu-item">
-                            <a href="#">
-                              <i className="typcn typcn-video" /> Vidéos
-                            </a>
-                          </li>
-                        </ul>
-                      </nav>
+      <ul id="menu-scrolling-menu-mobile" className="menu">
+        {scrollingMenuItems.map((item, index) => (
+          <li key={index} className={`menu-item ${item.subMenu ? "menu-item-has-children" : ""}`}>
+            <Link href={item.link}>
+              <i className={`typcn ${item.icon}`} /> {item.title}
+            </Link>
+            {item.subMenu && (
+              <ul className="sub-menu">
+                {item.subMenu.map((subItem, subIndex) => (
+                  <li key={subIndex} className="menu-item">
+                    <Link href={subItem.link}>{subItem.title}</Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
                       {/*menu mobile*/}
                     </div>
                   </div>
@@ -971,21 +895,17 @@ export default function RootLayout({
               </div>
             </div>
             <div className="main-full">
-            
-
-              <div
-                id="post-6"
-                className="main-wrap"
-              >
+              <div id="post-6" className="main-wrap">
                 {/*<div className="main-wrap">{children}</div>*/}
                 {/*loading && <Loader />} {/* Affichage du loader */}
                 {isTransitioning && <TransitionPage />}
+
                 {children}
+
                 <BottomMenu />
               </div>
             </div>
 
-            
             <footer className="main-footer cols-gap-lg footer-bold s-dark">
               <div className="upper-footer bold-footer-upper">
                 <div className="ts-contain wrap">
@@ -1002,7 +922,7 @@ export default function RootLayout({
                             src="/images/logo-people237.png"
                             width={180}
                             height={80}
-                            alt="About Us"                            
+                            alt="About Us"
                           />
                         </div>
                         <div className="base-text about-text">
@@ -1246,7 +1166,8 @@ export default function RootLayout({
                               </article>
                             </div>
                           </div>
-                          <br/><br/>
+                          <br />
+                          <br />
                           <div className="widget-title block-head block-head-ac block-head block-head-ac block-head-b is-left has-style">
                             <h5
                               className="heading"
@@ -1272,8 +1193,6 @@ export default function RootLayout({
                               Sport
                             </h5>
                           </div>
-                          
-                          
                         </section>
                       </div>
                     </div>
@@ -1459,7 +1378,6 @@ export default function RootLayout({
                 </div>
               </div>
             </footer>
-
           </div>
           {/* .main-wrap */}
         </>
