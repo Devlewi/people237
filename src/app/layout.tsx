@@ -7,11 +7,12 @@ import "bootstrap/dist/css/bootstrap-grid.min.css";
 //import "bootstrap/dist/css/bootstrap.min.css";
 import Script from "next/script";
 import NewsleterComponentHeader from "./components/NewsleterComponentHeader";
-import Link from "next/link";
+
 import { usePathname } from "next/navigation";
 import BottomMenu from "./components/BottomMenu";
 import Image from "next/image";
 import TransitionPage from "./components/TransitionPage";
+import Link from "next/link";
 
 //import $ from "jquery"; // Importer jQuery directement
 
@@ -31,14 +32,14 @@ export default function RootLayout({
       subMenu: [
         { title: "Camer", link: "/categorie/people-camer" },
         { title: "International", link: "/categorie/people-international" },
-        { title: "Buzz", link: "/categorie/people-buzz" }
-      ]
+        { title: "Buzz", link: "/categorie/people-buzz" },
+      ],
     },
     {
       title: "Portraits",
       icon: "typcn typcn-camera",
       link: "/categorie/people-portrait",
-      subMenu: []
+      subMenu: [],
     },
     {
       title: "Events",
@@ -46,8 +47,8 @@ export default function RootLayout({
       link: "/categorie/events",
       subMenu: [
         { title: "Concerts", link: "/categorie/events-concerts" },
-        { title: "Festival", link: "/categorie/events-festivals" }
-      ]
+        { title: "Festival", link: "/categorie/events-festivals" },
+      ],
     },
     {
       title: "Découverte",
@@ -58,8 +59,11 @@ export default function RootLayout({
         { title: "Cuisine", link: "/categorie/decouverte-cuisine" },
         { title: "Littérature", link: "/categorie/decouverte-litterature" },
         { title: "Mode", link: "/categorie/decouverte-mode" },
-        { title: "Santé – bien être", link: "/categorie/decouverte-sante-et-bien-etre" }
-      ]
+        {
+          title: "Santé – bien être",
+          link: "/categorie/decouverte-sante-et-bien-etre",
+        },
+      ],
     },
     {
       title: "Bons plans",
@@ -68,39 +72,39 @@ export default function RootLayout({
       subMenu: [
         { title: "Restaurant", link: "/categorie/bons-plans-restaurants" },
         { title: "Party", link: "/categorie/bons-plans-party-after-work" },
-        { title: "Tourisme", link: "/categorie/bons-plans-tourisme" }
-      ]
+        { title: "Tourisme", link: "/categorie/bons-plans-tourisme" },
+      ],
     },
     {
       title: "Top stars",
       icon: "typcn typcn-star-outline",
       link: "/categorie/top-stars",
-      subMenu: []
+      subMenu: [],
     },
     {
       title: "Société",
       icon: "typcn typcn-world",
       link: "/categorie/societes",
-      subMenu: []
+      subMenu: [],
     },
     {
       title: "Sports",
       icon: "typcn typcn-flag",
       link: "/categorie/sport",
-      subMenu: []
+      subMenu: [],
     },
     {
       title: "Galerie Photos",
       icon: "typcn typcn-image",
       link: "/categorie/galerie-photos",
-      subMenu: []
+      subMenu: [],
     },
     {
       title: "Vidéos",
       icon: "typcn typcn-video",
       link: "/categorie/videos",
-      subMenu: []
-    }
+      subMenu: [],
+    },
   ];
 
   const menuItemsD = [
@@ -111,13 +115,13 @@ export default function RootLayout({
       subMenu: [
         { title: "Camer", link: "/categorie/people-camer" },
         { title: "International", link: "/categorie/people-international" },
-        { title: "Buzz", link: "/categorie/people-buzz" }
-      ]
+        { title: "Buzz", link: "/categorie/people-buzz" },
+      ],
     },
     {
       title: "Portraits",
       icon: "typcn-camera",
-      link: "/categorie/people-portrait"
+      link: "/categorie/people-portrait",
     },
     {
       title: "Events",
@@ -125,8 +129,8 @@ export default function RootLayout({
       link: "/categorie/events",
       subMenu: [
         { title: "Concerts", link: "/categorie/events-concerts" },
-        { title: "Festival", link: "/categorie/events-festivals" }
-      ]
+        { title: "Festival", link: "/categorie/events-festivals" },
+      ],
     },
     {
       title: "Découverte",
@@ -137,8 +141,11 @@ export default function RootLayout({
         { title: "Cuisine", link: "/categorie/decouverte-cuisine" },
         { title: "Littérature", link: "/categorie/decouverte-litterature" },
         { title: "Mode", link: "/categorie/decouverte-mode" },
-        { title: "Santé – bien être", link: "/categorie/decouverte-sante-et-bien-etre" }
-      ]
+        {
+          title: "Santé – bien être",
+          link: "/categorie/decouverte-sante-et-bien-etre",
+        },
+      ],
     },
     {
       title: "Bons plans",
@@ -147,98 +154,49 @@ export default function RootLayout({
       subMenu: [
         { title: "Restaurant", link: "/categorie/bons-plans-restaurants" },
         { title: "Party", link: "/categorie/bons-plans-party-after-work" },
-        { title: "Tourisme", link: "/categorie/bons-plans-tourisme" }
-      ]
+        { title: "Tourisme", link: "/categorie/bons-plans-tourisme" },
+      ],
     },
     {
       title: "Top stars",
       icon: "typcn-star-outline",
-      link: "/categorie/top-stars"
+      link: "/categorie/top-stars",
     },
     {
       title: "Société",
       icon: "typcn-world",
-      link: "/categorie/societes"
+      link: "/categorie/societes",
     },
     {
       title: "Sports",
       icon: "typcn-flag",
-      link: "/categorie/sport"
+      link: "/categorie/sport",
     },
     {
       title: "Galerie Photos",
       icon: "typcn-image",
-      link: "/categorie/galerie-photos"
+      link: "/categorie/galerie-photos",
     },
     {
       title: "Vidéos",
       icon: "typcn-video",
-      link: "/categorie/videos"
-    }
+      link: "/categorie/videos",
+    },
   ];
-  
-  const scrollingMenuItems = [
-    {
-      title: "People",
-      icon: "typcn-home",
-      link: "/categorie/people",
-      subMenu: [
-        { title: "Camer", link: "/categorie/people-camer" },
-        { title: "International", link: "/categorie/people-international" },
-        { title: "Buzz", link: "/categorie/people-buzz" }
-      ]
-    },
-    {
-      title: "Portraits",
-      icon: "typcn-camera",
-      link: "/categorie/people-portrait"
-    },
-    {
-      title: "Events",
-      icon: "typcn-calendar",
-      link: "/categorie/events",
-      subMenu: [
-        { title: "Concerts", link: "/categorie/events-concerts" },
-        { title: "Festival", link: "/categorie/events-festivals" }
-      ]
-    },
-    {
-      title: "Bons plans",
-      icon: "typcn-star",
-      link: "#",
-      subMenu: [
-        { title: "Restaurant", link: "/categorie/bons-plans-restaurants" },
-        { title: "Party", link: "/categorie/bons-plans-party-after-work" },
-        { title: "Tourisme", link: "/categorie/bons-plans-tourisme" }
-      ]
-    },
-    {
-      title: "Top stars",
-      icon: "typcn-star-outline",
-      link: "/categorie/top-stars"
-    },
-    {
-      title: "Société",
-      icon: "typcn-world",
-      link: "/categorie/societes"
-    },
-    {
-      title: "Sports",
-      icon: "typcn-flag",
-      link: "/categorie/sport"
-    },
-    {
-      title: "Galerie Photos",
-      icon: "typcn-image",
-      link: "/categorie/galerie-photos"
-    },
-    {
-      title: "Vidéos",
-      icon: "typcn-video",
-      link: "/categorie/videos"
-    }
+
+  const navItems = [
+    { title: "PEOPLE", icon: "typcn-home", link: "/categorie/people" },
+    { title: "PORTRAITS", icon: "typcn-camera", link: "/categorie/people-portrait" },
+    { title: "EVENTS", icon: "typcn-calendar", link: "/categorie/events" },
+    { title: "DECOUVERTES", icon: "typcn-camera", link: "/categorie/decouvertes" },
+    { title: "BONS PLANS", icon: "typcn-star", link: "/categorie/bons-plans" },
+    { title: "TOP STARS", icon: "typcn-star-outline", link: "/categorie/top-star" },
+    { title: "SOCIETES", icon: "typcn-world", link: "/categorie/societes" },
+    { title: "SPORTS", icon: "typcn-flag", link: "/categorie/sport" },
+    { title: "GALERIE PHOTOS", icon: "typcn-image", link: "/categorie/galerie-photos" },
+    { title: "VIDEOS", icon: "typcn-video", link: "/categorie/videos" },
   ];
-  
+
   useEffect(() => {
     // Déclenchez l'animation lors d'un changement de route
     setIsTransitioning(true);
@@ -607,32 +565,38 @@ export default function RootLayout({
                 </div>
               </div>
               <div className="off-canvas-content">
-                
                 {/*<ul className="mobile-menu" />*/}
                 {/* sidebar menu */}
-<ul className="mobile-menu">
-  {menuItems.map((menu, index) => (
-    <li key={index} className={`menu-item menu-item-type-custom ${menu.subMenu.length > 0 ? "menu-item-has-children" : ""}`}>
-      <Link href={menu.link}>
-        <i className={menu.icon} /> {menu.title}
-      </Link>
-      
-      {menu.subMenu.length > 0 && (
-        <ul className="sub-menu">
-          {menu.subMenu.map((subMenuItem, subIndex) => (
-            <li key={subIndex} className="menu-item menu-item-type-custom">
-              <Link href={subMenuItem.link}>{subMenuItem.title}</Link>
-            </li>
-          ))}
-        </ul>
-      )}
-    </li>
-  ))}
-</ul>
+                <ul className="mobile-menu">
+                  {menuItems.map((menu, index) => (
+                    <li
+                      key={index}
+                      className={`menu-item menu-item-type-custom ${
+                        menu.subMenu.length > 0 ? "menu-item-has-children" : ""
+                      }`}
+                    >
+                      <Link href={menu.link}>
+                        <i className={menu.icon} /> {menu.title}
+                      </Link>
 
-                
+                      {menu.subMenu.length > 0 && (
+                        <ul className="sub-menu">
+                          {menu.subMenu.map((subMenuItem, subIndex) => (
+                            <li
+                              key={subIndex}
+                              className="menu-item menu-item-type-custom"
+                            >
+                              <Link href={subMenuItem.link}>
+                                {subMenuItem.title}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  ))}
+                </ul>
 
-                
                 <NewsleterComponentHeader />
                 <div className="spc-social-block spc-social spc-social-b smart-head-social">
                   <a
@@ -768,26 +732,34 @@ export default function RootLayout({
                     <div className="nav-wrap">
                       {/*menu desktop*/}
                       <nav className="navigation navigation-main nav-hov-a">
-      <ul id="menu-main-menu" className="menu">
-        {menuItemsD.map((item, index) => (
-          <li key={index} className={`menu-item ${item.subMenu ? "menu-item-has-children" : ""}`}>
-            <Link href={item.link}>
-              <i className={`typcn ${item.icon}`} /> {item.title}
-            </Link>
-            {item.subMenu && (
-              <ul className="sub-menu">
-                {item.subMenu.map((subItem, subIndex) => (
-                  <li key={subIndex} className="menu-item">
-                    <Link href={subItem.link}>{subItem.title}</Link>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))}
-      </ul>
-    </nav>
-                      
+                        <ul id="menu-main-menu" className="menu">
+                          {menuItemsD.map((item, index) => (
+                            <li
+                              key={index}
+                              className={`menu-item ${
+                                item.subMenu ? "menu-item-has-children" : ""
+                              }`}
+                            >
+                              <Link href={item.link}>
+                                <i className={`typcn ${item.icon}`} />{" "}
+                                {item.title}
+                              </Link>
+                              {item.subMenu && (
+                                <ul className="sub-menu">
+                                  {item.subMenu.map((subItem, subIndex) => (
+                                    <li key={subIndex} className="menu-item">
+                                      <Link href={subItem.link}>
+                                        {subItem.title}
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </nav>
+
                       {/*menu desktop*/}
                     </div>
                   </div>
@@ -866,26 +838,77 @@ export default function RootLayout({
                   <div className="items items-left ">
                     <div className="nav-wrap">
                       {/*menu mobile*/}
-                      <nav className="navigation navigation-scroll nav-hov-b">
-      <ul id="menu-scrolling-menu-mobile" className="menu">
-        {scrollingMenuItems.map((item, index) => (
-          <li key={index} className={`menu-item ${item.subMenu ? "menu-item-has-children" : ""}`}>
-            <Link href={item.link}>
+
+                      <nav className="navigation navigation-scroll nav-hov-b" style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "10px 0" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "20px", fontSize: 14, fontWeight: 700, fontFamily: "Roboto Slab, sans-serif" }}>
+        {navItems.map((item, index) => (
+          <Link key={index} href={item.link} legacyBehavior>
+            <a style={{ display: "flex", alignItems: "center", gap: "5px", textDecoration: "none", color: "inherit" }}>
               <i className={`typcn ${item.icon}`} /> {item.title}
-            </Link>
-            {item.subMenu && (
-              <ul className="sub-menu">
-                {item.subMenu.map((subItem, subIndex) => (
-                  <li key={subIndex} className="menu-item">
-                    <Link href={subItem.link}>{subItem.title}</Link>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
+            </a>
+          </Link>
         ))}
-      </ul>
+      </div>
     </nav>
+
+                      {/*
+                      
+                      <nav className="navigation navigation-scroll nav-hov-b">
+                        <ul id="menu-scrolling-menu-mobile" className="menu">
+                          <li className="menu-item menu-item-has-children">
+                            <Link href={"/categorie/people"}>
+                              <i className="typcn typcn-home" /> People
+                            </Link>
+                          </li>
+                          <li className="menu-item">
+                            <Link href={"/categorie/people-portrait"}>
+                              <i className="typcn typcn-camera" /> Portraits
+                            </Link>
+                          </li>
+                          <li className="menu-item menu-item-has-children">
+                            <Link href={"/categorie/events"}>
+                              <i className="typcn typcn-calendar" /> Events
+                            </Link>
+                          </li>
+                          <li className="menu-item menu-item-has-children">
+                            <Link href={"/categorie/decouvertes"}>
+                              <i className="typcn typcn-camera" /> Découvertes
+                            </Link>
+                          </li>
+                          <li className="menu-item menu-item-has-children">
+                            <Link href={"/categorie/bons-plans"}>
+                              <i className="typcn typcn-star" /> Bons plans
+                            </Link>
+                          </li>
+                          <li className="menu-item">
+                            <Link href={"/categorie/top-star"}>
+                              <i className="typcn typcn-star-outline" /> Top
+                              stars
+                            </Link>
+                          </li>
+                          <li className="menu-item">
+                            <Link href={"/categorie/societes"}>
+                              <i className="typcn typcn-world" /> Société
+                            </Link>
+                          </li>
+                          <li className="menu-item">
+                            <Link href={"/categorie/sport"}>
+                              <i className="typcn typcn-flag" /> Sports
+                            </Link>
+                          </li>
+                          <li className="menu-item">
+                            <Link href={"/categorie/galerie-photos"}>
+                              <i className="typcn typcn-image" /> Galerie Photos
+                            </Link>
+                          </li>
+                          <li className="menu-item">
+                            <Link href={"/categorie/video"}>
+                              <i className="typcn typcn-video" /> Vidéos
+                            </Link>
+                          </li>
+                        </ul>
+                      </nav>
+                      */}
                       {/*menu mobile*/}
                     </div>
                   </div>
@@ -918,12 +941,14 @@ export default function RootLayout({
                       </div>
                       <div className="inner ">
                         <div className="image-logo">
+                        <Link href={"/"}>
                           <Image
                             src="/images/logo-people237.png"
                             width={180}
                             height={80}
-                            alt="About Us"
+                            alt="Logo"
                           />
+                          </Link>
                         </div>
                         <div className="base-text about-text">
                           <p>
@@ -940,6 +965,7 @@ export default function RootLayout({
                           className="block-wrap block-posts-small block-sc mb-none"
                           data-id={28}
                         >
+                          <Link href={"/categorie/people"}>
                           <div className="widget-title block-head block-head-ac block-head block-head-ac block-head-b is-left has-style">
                             <h5
                               className="heading"
@@ -948,16 +974,17 @@ export default function RootLayout({
                               People
                             </h5>
                           </div>
+                          </Link>
                           <div className="block-content">
                             <div className="loop loop-small loop-small-a loop-sep loop-small-sep grid grid-1 md:grid-1 sm:grid-1 xs:grid-1">
                               <article className="l-post small-post small-a-post m-pos-left">
                                 <div className="content">
                                   <div className="post-meta post-meta-a post-meta-left has-below">
                                     <h4 className="is-title post-title">
-                                      <a href="#" className="white-title">
+                                      <Link href={"/categorie/people-camer"} className="white-title">
                                         <i className="typcn typcn-chevron-right" />{" "}
                                         Camer
-                                      </a>
+                                      </Link>
                                     </h4>
                                   </div>
                                 </div>
@@ -966,10 +993,10 @@ export default function RootLayout({
                                 <div className="content">
                                   <div className="post-meta post-meta-a post-meta-left has-below">
                                     <h4 className="is-title post-title">
-                                      <a href="#" className="white-title">
+                                    <Link href={"/categorie/people-international"} className="white-title">
                                         <i className="typcn typcn-chevron-right" />{" "}
                                         International
-                                      </a>
+                                      </Link>
                                     </h4>
                                   </div>
                                 </div>
@@ -978,10 +1005,10 @@ export default function RootLayout({
                                 <div className="content">
                                   <div className="post-meta post-meta-a post-meta-left has-below">
                                     <h4 className="is-title post-title">
-                                      <a href="#" className="white-title">
+                                      <Link href={"/categorie/people-buzz	"} className="white-title">
                                         <i className="typcn typcn-chevron-right" />{" "}
                                         Buzz
-                                      </a>
+                                      </Link>                                      
                                     </h4>
                                   </div>
                                 </div>
@@ -996,21 +1023,23 @@ export default function RootLayout({
                         className="block-wrap block-posts-small block-sc mb-none"
                         data-id={28}
                       >
+                        <Link href={"/categorie/events"}>
                         <div className="widget-title block-head block-head-ac block-head block-head-ac block-head-b is-left has-style">
                           <h5 className="heading" style={{ color: "#dc9000" }}>
                             Events
                           </h5>
                         </div>
+                        </Link>
                         <div className="block-content">
                           <div className="loop loop-small loop-small-a loop-sep loop-small-sep grid grid-1 md:grid-1 sm:grid-1 xs:grid-1">
                             <article className="l-post small-post small-a-post m-pos-left">
                               <div className="content">
                                 <div className="post-meta post-meta-a post-meta-left has-below">
                                   <h4 className="is-title post-title">
-                                    <a href="#" className="white-title">
-                                      <i className="typcn typcn-chevron-right" />{" "}
-                                      Concert
-                                    </a>
+                                      <Link href={"/categorie/events-concerts"} className="white-title">
+                                        <i className="typcn typcn-chevron-right" />{" "}
+                                        Concert
+                                      </Link>                                                                          
                                   </h4>
                                 </div>
                               </div>
@@ -1019,10 +1048,10 @@ export default function RootLayout({
                               <div className="content">
                                 <div className="post-meta post-meta-a post-meta-left has-below">
                                   <h4 className="is-title post-title">
-                                    <a href="#" className="white-title">
-                                      <i className="typcn typcn-chevron-right" />{" "}
-                                      Festival
-                                    </a>
+                                  <Link href={"/categorie/events-festivals"} className="white-title">
+                                        <i className="typcn typcn-chevron-right" />{" "}
+                                        Festival
+                                      </Link>                                                                                                              
                                   </h4>
                                 </div>
                               </div>
@@ -1037,6 +1066,7 @@ export default function RootLayout({
                           className="block-wrap block-posts-small block-sc mb-none"
                           data-id={28}
                         >
+                          <Link href={"/categorie/decouvertes"}>
                           <div className="widget-title block-head block-head-ac block-head block-head-ac block-head-b is-left has-style">
                             <h5
                               className="heading"
@@ -1045,16 +1075,19 @@ export default function RootLayout({
                               Découverte
                             </h5>
                           </div>
+                          </Link>
                           <div className="block-content">
                             <div className="loop loop-small loop-small-a loop-sep loop-small-sep grid grid-1 md:grid-1 sm:grid-1 xs:grid-1">
                               <article className="l-post small-post small-a-post m-pos-left">
                                 <div className="content">
                                   <div className="post-meta post-meta-a post-meta-left has-below">
                                     <h4 className="is-title post-title">
-                                      <a href="#" className="white-title">
+
+                                    <Link href={"/categorie/decouverte-cinema-arts"} className="white-title">
                                         <i className="typcn typcn-chevron-right" />{" "}
                                         Cinéma/art
-                                      </a>
+                                      </Link>                                                                                                              
+                                      
                                     </h4>
                                   </div>
                                 </div>
@@ -1063,10 +1096,11 @@ export default function RootLayout({
                                 <div className="content">
                                   <div className="post-meta post-meta-a post-meta-left has-below">
                                     <h4 className="is-title post-title">
-                                      <a href="#" className="white-title">
+                                    <Link href={"/categorie/decouverte-cuisine"} className="white-title">
                                         <i className="typcn typcn-chevron-right" />{" "}
                                         Cuisine
-                                      </a>
+                                      </Link>   
+                                      
                                     </h4>
                                   </div>
                                 </div>
@@ -1075,10 +1109,10 @@ export default function RootLayout({
                                 <div className="content">
                                   <div className="post-meta post-meta-a post-meta-left has-below">
                                     <h4 className="is-title post-title">
-                                      <a href="#" className="white-title">
+                                    <Link href={"/categorie/decouverte-litterature"} className="white-title">
                                         <i className="typcn typcn-chevron-right" />{" "}
                                         Littérature
-                                      </a>
+                                      </Link>                                         
                                     </h4>
                                   </div>
                                 </div>
@@ -1087,10 +1121,10 @@ export default function RootLayout({
                                 <div className="content">
                                   <div className="post-meta post-meta-a post-meta-left has-below">
                                     <h4 className="is-title post-title">
-                                      <a href="#" className="white-title">
+                                      <Link href={"/categorie/decouverte-mode"} className="white-title">
                                         <i className="typcn typcn-chevron-right" />{" "}
                                         Mode
-                                      </a>
+                                      </Link>                                                                               
                                     </h4>
                                   </div>
                                 </div>
@@ -1099,10 +1133,10 @@ export default function RootLayout({
                                 <div className="content">
                                   <div className="post-meta post-meta-a post-meta-left has-below">
                                     <h4 className="is-title post-title">
-                                      <a href="#" className="white-title">
+                                    <Link href={"/categorie/decouverte-sante-et-bien-etre"} className="white-title">
                                         <i className="typcn typcn-chevron-right" />{" "}
                                         Santé – bien être
-                                      </a>
+                                      </Link>                                                                                                                     
                                     </h4>
                                   </div>
                                 </div>
@@ -1118,6 +1152,7 @@ export default function RootLayout({
                           className="block-wrap block-posts-small block-sc mb-none"
                           data-id={28}
                         >
+                          <Link href={"/categorie/bons-plans"}>
                           <div className="widget-title block-head block-head-ac block-head block-head-ac block-head-b is-left has-style">
                             <h5
                               className="heading"
@@ -1126,16 +1161,17 @@ export default function RootLayout({
                               Bons Plans
                             </h5>
                           </div>
+                          </Link>
                           <div className="block-content">
                             <div className="loop loop-small loop-small-a loop-sep loop-small-sep grid grid-1 md:grid-1 sm:grid-1 xs:grid-1">
                               <article className="l-post small-post small-a-post m-pos-left">
                                 <div className="content">
                                   <div className="post-meta post-meta-a post-meta-left has-below">
                                     <h4 className="is-title post-title">
-                                      <a href="#" className="white-title">
+                                    <Link href={"/categorie/bons-plans-restaurants"} className="white-title">
                                         <i className="typcn typcn-chevron-right" />{" "}
                                         Restaurant
-                                      </a>
+                                      </Link>                                                                                                                                                           
                                     </h4>
                                   </div>
                                 </div>
@@ -1144,10 +1180,10 @@ export default function RootLayout({
                                 <div className="content">
                                   <div className="post-meta post-meta-a post-meta-left has-below">
                                     <h4 className="is-title post-title">
-                                      <a href="#" className="white-title">
+                                    <Link href={"/categorie/bons-plans-party-after-work"} className="white-title">
                                         <i className="typcn typcn-chevron-right" />{" "}
                                         Party
-                                      </a>
+                                      </Link>                                                                                                                                                           
                                     </h4>
                                   </div>
                                 </div>
@@ -1156,10 +1192,10 @@ export default function RootLayout({
                                 <div className="content">
                                   <div className="post-meta post-meta-a post-meta-left has-below">
                                     <h4 className="is-title post-title">
-                                      <a href="#" className="white-title">
+                                    <Link href={"/categorie/bons-plans-tourisme"} className="white-title">
                                         <i className="typcn typcn-chevron-right" />{" "}
                                         Tourisme
-                                      </a>
+                                      </Link>                                                                                                                                                           
                                     </h4>
                                   </div>
                                 </div>
@@ -1168,6 +1204,7 @@ export default function RootLayout({
                           </div>
                           <br />
                           <br />
+                          <Link href={"/categorie/top-stars"}>
                           <div className="widget-title block-head block-head-ac block-head block-head-ac block-head-b is-left has-style">
                             <h5
                               className="heading"
@@ -1176,7 +1213,9 @@ export default function RootLayout({
                               Top stars
                             </h5>
                           </div>
+                          </Link>
 
+                          <Link href={"/categorie/societes"}>
                           <div className="widget-title block-head block-head-ac block-head block-head-ac block-head-b is-left has-style">
                             <h5
                               className="heading"
@@ -1185,6 +1224,8 @@ export default function RootLayout({
                               Société
                             </h5>
                           </div>
+                            </Link>
+                            <Link href={"/categorie/sport"}>
                           <div className="widget-title block-head block-head-ac block-head block-head-ac block-head-b is-left has-style">
                             <h5
                               className="heading"
@@ -1193,6 +1234,7 @@ export default function RootLayout({
                               Sport
                             </h5>
                           </div>
+                          </Link>
                         </section>
                       </div>
                     </div>
