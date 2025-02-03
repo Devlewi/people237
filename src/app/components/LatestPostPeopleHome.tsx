@@ -60,7 +60,7 @@ const LatestPostPeopleHome: React.FC<LatestPostPeopleHomeProps> = ({
                     title="L’acteur Hervé Nguetch n’est plus un coeur à prendre"
                   >
                     <Image
-                      src={article.featured_image}
+                      src={article.featured_image ? article.featured_image : "/images/default.png"}
                       alt={article.title}
                       layout="fill"
                       objectFit="cover"

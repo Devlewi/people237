@@ -45,7 +45,7 @@ const LatestPostSocieteHome: React.FC<LatestPostSocieteHomeProps> = ({
                                         title="Review: Mobile Carriers Eying on 5G Rollout in Generation Z Models"
                                       >
                                         <Image
-                                          src={article.featured_image}
+                                          src={article.featured_image ? article.featured_image : "/images/default.png"}
                                           alt={article.title}
                                           layout="intrinsic"
                                           width={608}

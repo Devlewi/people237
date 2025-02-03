@@ -60,7 +60,7 @@ const SidebarDeuxHome: React.FC<LatestPostSidebarDeuxHomeProps> = ({
                     title="Doctors’ Advise on Sanitizers You Should Not Use"
                   >
                     <Image
-                      src={article.featured_image}
+                      src={article.featured_image ? article.featured_image : "/images/default.png"}
                       alt={article.title}
                       layout="intrinsic"
                       width={110}

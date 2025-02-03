@@ -5,8 +5,9 @@ import { FaEye, FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 import SidebarUnHome from "../components/SidebarUnHome";
+import NotFound from "../not-found";
 
-import NotFound from "../404/page";
+
 
 interface Category {
   name: string;
@@ -298,7 +299,7 @@ const ArticleDetail = async ({
 
                       <div className="single-featured">
                         <Image
-                          src={article.featured_image}
+                          src={article.featured_image ? article.featured_image : "/images/default.png"}
                           alt="Image de coco lago"
                           layout="intrinsic"
                           width={788}
@@ -329,7 +330,9 @@ const ArticleDetail = async ({
                           <p style={{ fontWeight: "bolder" }}>
                             {" "}
                             Suivez l&apos;information en direct sur notre chaîne{" "}
-                            <b style={{ color: "#dba240" }}>Whatsapp</b>
+
+                              <a style={{ color: "#dba240", fontWeight:800 }} target="_blank" href="https://whatsapp.com/channel/0029Va5d3Hq1iUxW8iffDm06"> WHATSAPP </a>
+
                           </p>
                           {/*
                         <p style={{ fontSize: 16 }}>

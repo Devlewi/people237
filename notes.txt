@@ -1245,7 +1245,7 @@ obsolete, retenir que les plugins necessaires et indispensables
 
 
 
-==== structure du projet NEXT JS
+==== structure du projet NEXT JS 15
 src
     app        
         page.tsx

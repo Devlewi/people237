@@ -119,7 +119,7 @@ const SearchContent = () => {
                     title=""
                   >
                   <Image
-                        src={article.featured_image || "/images/default.png"}
+                        src={article.featured_image ? article.featured_image : "/images/default.png"}
                         alt={article.title}
                         width={500}
                         height={300}

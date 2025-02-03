@@ -50,7 +50,7 @@ const LatestPostVideoHome: React.FC<LatestPostVideoHomeProps> = ({
                   title="Santorini and Athens Make Most ‘Instagrammable’ Places"
                 >
                   <Image
-                    src={article.featured_image}
+                    src={article.featured_image ? article.featured_image : "/images/default.png"}
                     alt={article.title}
                     layout="intrinsic"
                     width={377}

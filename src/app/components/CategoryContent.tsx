@@ -138,10 +138,7 @@ const CategoryContent = ({
                                       title={post.title}
                                     >
                                       <Image
-                                        src={
-                                          post.featured_image ||
-                                          "default-image.jpg"
-                                        }
+                                        src={post.featured_image ? post.featured_image : "/images/default.png"}
                                         alt={post.title}
                                         layout="intrinsic"
                                         width={377}

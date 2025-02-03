@@ -57,7 +57,7 @@ const LatestPostGalerieHome: React.FC<LatestPostGalerieHomeProps> = ({
                     title="Coco lago fait l’éloge de Coco Argenté"
                   >
                     <Image
-                      src={article.featured_image}
+                      src={article.featured_image ? article.featured_image : "/images/default.png"}
                       alt={article.title}
                       layout="intrinsic"
                       width={377}
