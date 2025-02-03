@@ -32,7 +32,10 @@ export const metadata: Metadata = {
 // Fonction qui récupère les données côté serveur
 const fetchData = async () => {
   try {
-    const response = await fetch("https://controlpanel.people237.com/wp-json/articles/homepage", {
+    //"https://controlpanel.people237.com/wp-json/articles/homepage"
+
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/wp-json/articles/homepage`, 
+    {
       next: { revalidate: 60 },
     }); // Remplacez par votre URL d'API
     const data = await response.json();
