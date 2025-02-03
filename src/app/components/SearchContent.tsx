@@ -114,7 +114,7 @@ const SearchContent = () => {
                 <article className="l-post grid-post grid-base-post" key={article.id}>
                 <div className="media">
                   <Link
-                    href={`/details/${article.slug}`}
+                    href={`/${article.slug}`}
                     className="image-link media-ratio ratio-16-9"
                     title=""
                   >

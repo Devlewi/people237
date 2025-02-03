@@ -1254,8 +1254,11 @@ src
         global.css        
         components
         articles
-            page.tsx 
+            [slug.tsx]
         categories
             [culture]
                 page.tsx             
+        recherche
+            page.tsx
+            
         
