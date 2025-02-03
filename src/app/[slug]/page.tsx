@@ -6,6 +6,8 @@ import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 import SidebarUnHome from "../components/SidebarUnHome";
 
+import NotFound from "../404/page";
+
 interface Category {
   name: string;
   slug: string;
@@ -70,8 +72,19 @@ const ArticleDetail = async ({
       `https://controlpanel.people237.com/wp-json/custom/v1/article/${slug}`
     );
 
+    //console.log(res);
     if (!res.ok) {
-      throw new Error(`Erreur HTTP: ${res.status}`);
+      //throw new Error(`Erreur HTTP: ${res.status}`);
+
+      // Si la réponse est 404, rediriger vers la page 404, sinon afficher un message d'erreur.
+      if (res.status === 404) {
+        //return <div>Article invalide</div>; // Affiche "Article invalide" lorsque le statut est 404
+        //return redirect("/404");
+        return <NotFound/>;
+        //return redirect("/404");
+      } else {
+        throw new Error(`Erreur HTTP: ${res.status}`);
+      }
     }
 
     const article = await res.json();
