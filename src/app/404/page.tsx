@@ -6,8 +6,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Page Non Trouvée",
-  description: "Désolé, la page que vous cherchez n'existe pas.",
+  title: "Contenu Non Trouvé",
+  description: "Désolé, le contenu que vous cherchez n'existe pas.",
 };
 
 const NotFound = () => {
@@ -26,10 +26,10 @@ const NotFound = () => {
   height={450}
 />
             <h1 className="text-4xl font-bold text-red-600 mb-4">
-              Erreur 404 - Page Non Trouvée
+              Erreur 404 - Contenu Non Trouvé
             </h1>
             <p className="text-lg text-gray-700 mt-4">
-              La page que vous cherchez n&apos;existe pas ou a été déplacée.
+              Le contenu que vous cherchez n&apos;existe pas ou a été déplacé.
             </p>
             <div className="mt-6">
               <Link
