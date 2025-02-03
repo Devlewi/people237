@@ -2,8 +2,9 @@ import CategoryContent from "@/app/components/CategoryContent";
 
 // Fonction pour récupérer les données de l'article via l'API
 // Fonction pour récupérer les données de la sidebar via l'API
-async function fetchSidebarData() {
-  const res = await fetch("https://controlpanel.people237.com/wp-json/articles/homepage");
+async function fetchSidebarData() {  
+  // https://controlpanel.people237.com/wp-json/articles/homepage
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/wp-json/articles/homepage`);
   const data = await res.json();
   return data.recap.latestposts; // Retourner uniquement les articles de 'latestposts'
 }
@@ -12,8 +13,9 @@ async function fetchSidebarData() {
 // Fonction SSR pour générer les métadonnées de la page
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params; // ⚠️ Correction ici : "await params"
+  //const res = await fetch(`https://controlpanel.people237.com/wp-json/custom-api/publications/slug-categorie/${slug}`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/wp-json/custom-api/publications/slug-categorie/${slug}`);
 
-  const res = await fetch(`https://controlpanel.people237.com/wp-json/custom-api/publications/slug-categorie/${slug}`);
   const data = await res.json();
   console.log(data.category_name);
 
@@ -57,7 +59,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const sidebarData = await fetchSidebarData();
   
     // Récupérer les articles de la catégorie via l'API, en incluant le paramètre de la page
-    const res = await fetch(`https://controlpanel.people237.com/wp-json/custom-api/publications/slug-categorie/${slug}?page=${currentPage}`);
+    //const res = await fetch(`https://controlpanel.people237.com/wp-json/custom-api/publications/slug-categorie/${slug}?page=${currentPage}`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/wp-json/custom-api/publications/slug-categorie/${slug}?page=${currentPage}`);
+
     const data = await res.json();
   
     // Extraire les articles et la pagination

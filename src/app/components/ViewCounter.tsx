@@ -7,9 +7,18 @@ interface ViewCounterProps {
   initialViews: number;
 }
 
+
+/*
+const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/wp-json/custom/v1/search/?q=${searchQuery}&page=${pageNum}`
+      );
+*/
+
 // Fonction pour incrémenter les vues via l'API
 const incrementViews = async (slug: string) => {
-  const url = `https://controlpanel.people237.com/wp-json/custom/v1/increment-views/${slug}`;
+  //const url = `https://controlpanel.people237.com/wp-json/custom/v1/increment-views/${slug}`;
+  const url = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/wp-json/custom/v1/increment-views/${slug}`;
+
   try {
     const res = await fetch(url, { method: 'POST' });
     if (!res.ok) {

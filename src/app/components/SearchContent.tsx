@@ -35,9 +35,13 @@ const SearchContent = () => {
   const fetchResults = async (searchQuery: string, pageNum: number) => {
     setLoading(true);
     try {
-      const response = await fetch(
+      /*const response = await fetch(
         `https://controlpanel.people237.com/wp-json/custom/v1/search/?q=${searchQuery}&page=${pageNum}`
+      );*/
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/wp-json/custom/v1/search/?q=${searchQuery}&page=${pageNum}`
       );
+      
       const data = await response.json();
       setResults(data.results);
       setTotalPages(data.pagination.total_pages);
