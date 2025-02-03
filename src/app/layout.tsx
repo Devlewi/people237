@@ -13,7 +13,7 @@ import BottomMenu from "./components/BottomMenu";
 import Image from "next/image";
 import TransitionPage from "./components/TransitionPage";
 import Link from "next/link";
-import { FaFontAwesome, FaVideo, FaYoutube } from "react-icons/fa";
+import {FaYoutube } from "react-icons/fa";
 
 
 
