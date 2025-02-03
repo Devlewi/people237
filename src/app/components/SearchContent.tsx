@@ -6,7 +6,8 @@ import Link from "next/link";
 import { IoSearchSharp } from "react-icons/io5";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale"; // Pour la langue française
-
+import { truncateTitle } from "@/utils/stringUtils";
+import he from "he";
 
 interface Article {
   id: number;
@@ -30,13 +31,7 @@ const SearchContent = () => {
   const [searched, setSearched] = useState(false); // Etat pour savoir si la recherche a été lancée
 
 
-  const truncateTitle = (title: string, maxWords: number) => {
-    const words = title.split(" ");
-    return words.length > maxWords
-      ? words.slice(0, maxWords).join(" ") + "..."
-      : title;
-  };
-
+  
   const fetchResults = async (searchQuery: string, pageNum: number) => {
     setLoading(true);
     try {
@@ -145,7 +140,7 @@ const SearchContent = () => {
                         href={`/details/${article.slug}`}
                         className="post-title-2"
                       >
-                        {truncateTitle(article.title, 10)}{" "}
+                        {truncateTitle(he.decode(article.title), 10)}{" "}
                         {/* Limite à 10 mots */}
                       </Link>
                     </h2>

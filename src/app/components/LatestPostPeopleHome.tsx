@@ -2,9 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale"; // Pour la langue française
-import he from "he";
 import { removeTags } from "@/utils/removeTags";
 import { formatNumber } from "@/utils/formatedNumber";
+import { truncateTitle } from "@/utils/stringUtils";
+import he from "he";
 
 type Article = {
   id: number;
@@ -86,7 +87,9 @@ const LatestPostPeopleHome: React.FC<LatestPostPeopleHomeProps> = ({
                       pathname: `/${article.slug}`, // URL dynamique
                     }} 
                     className="post-title-2">
-                        {he.decode(article.title)}
+
+                        {truncateTitle(he.decode(article.title), 7)}{" "}
+                        {/* Limite à 10 mots */}
                       </Link>
                     </h2>
                     <div className="post-meta-items meta-below">

@@ -6,6 +6,8 @@ import SidebarUnHome from "./SidebarUnHome";
 import TransitionPage from "./TransitionPage";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale"; // Pour la langue française
+import { truncateTitle } from "@/utils/stringUtils";
+import he from "he";
 
 type Post = {
   id: number;
@@ -164,7 +166,7 @@ const CategoryContent = ({
                                           href={`/${post.slug}`}
                                           className="post-title-2"
                                         >
-                                          {post.title}
+                                          {truncateTitle(he.decode(post.title), 7)}{" "}
                                         </Link>
                                       </h2>
                                       <div className="post-meta-items meta-below">

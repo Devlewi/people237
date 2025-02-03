@@ -4,6 +4,7 @@ import { fr } from "date-fns/locale"; // Pour la langue française
 import he from "he";
 import { formatNumber } from "@/utils/formatedNumber";
 import Link from "next/link";
+import { truncateTitle } from "@/utils/stringUtils";
 
 // Définir l'interface des props, ici on attend une prop 'alauneData' qui est un tableau
 interface FeaturedInfoProps {
@@ -96,7 +97,7 @@ const FeaturedInfo: React.FC<FeaturedInfoProps> = ({ alauneData }) => {
                                           }}
                                           style={{ cursor: "pointer" }}
                                         >
-                                          {he.decode(alauneData[0].title)}
+                                          {truncateTitle(he.decode(alauneData[0].title), 7)}{" "}
                                         </Link>
                                       </h2>
                                       <div
@@ -183,7 +184,7 @@ const FeaturedInfo: React.FC<FeaturedInfoProps> = ({ alauneData }) => {
                                           }}
                                           style={{ cursor: "pointer" }}
                                         >
-                                          {he.decode(alauneData[1].title)}
+                                          {truncateTitle(he.decode(alauneData[1].title), 7)}{" "}
                                         </Link>
                                       </h2>
                                       <div
@@ -268,7 +269,7 @@ const FeaturedInfo: React.FC<FeaturedInfoProps> = ({ alauneData }) => {
                                           }}
                                           style={{ cursor: "pointer" }}
                                         >
-                                          {he.decode(alauneData[2].title)}
+                                          {truncateTitle(he.decode(alauneData[2].title), 7)}{" "}
                                         </Link>
                                       </h2>
                                       <div

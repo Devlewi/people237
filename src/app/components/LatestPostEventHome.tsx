@@ -5,6 +5,7 @@ import { fr } from "date-fns/locale"; // Pour la langue française
 import he from "he";
 import { removeTags } from "@/utils/removeTags";
 import { formatNumber } from "@/utils/formatedNumber";
+import { truncateTitle } from "@/utils/stringUtils";
 
 type Article = {
   id: number;
@@ -85,7 +86,7 @@ const LatestPostEventHome: React.FC<LatestPostEventHomeProps> = ({
                     }}
                     
                     className="post-title-2">
-                      {he.decode(article.title)}
+                      {truncateTitle(he.decode(article.title), 7)}{" "}
                     </Link>
                   </h2>
                   <div className="post-meta-items meta-below">
