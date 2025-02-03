@@ -13,6 +13,9 @@ import BottomMenu from "./components/BottomMenu";
 import Image from "next/image";
 import TransitionPage from "./components/TransitionPage";
 import Link from "next/link";
+import { FaFontAwesome, FaVideo, FaYoutube } from "react-icons/fa";
+
+
 
 //import $ from "jquery"; // Importer jQuery directement
 
@@ -600,7 +603,7 @@ export default function RootLayout({
                 <NewsleterComponentHeader />
                 <div className="spc-social-block spc-social spc-social-b smart-head-social">
                   <a
-                    href="#"
+                    href="https://www.facebook.com/people237com"
                     className="link service s-facebook"
                     target="_blank"
                     rel="nofollow noopener"
@@ -609,13 +612,34 @@ export default function RootLayout({
                     <span className="visuallyhidden">Facebook</span>
                   </a>
                   <a
-                    href="#"
+                    href="https://x.com/Compeople237"
                     className="link service s-twitter"
                     target="_blank"
                     rel="nofollow noopener"
                   >
                     <i className="icon tsi tsi-twitter" />{" "}
                     <span className="visuallyhidden">X (Twitter)</span>
+                  </a>
+                  <a
+                    href="https://www.dailymotion.com/people237TV"
+                    className="link service s-instagram"
+                    target="_blank"
+                    rel="nofollow noopener"
+                    style={{fontWeight:700}}
+                  >
+                    
+                    {" "}d
+
+                  </a>
+                  <a
+                    href="#"
+                    className="link service s-youtube"
+                    target="_blank"
+                    rel="nofollow noopener"
+                  >
+                     <i className="icon tsi tsi-youtube">
+                     <FaYoutube />
+  </i>
                   </a>
                   <a
                     href="#"
@@ -641,7 +665,7 @@ export default function RootLayout({
                   <div className="items items-left ">
                     <div className="spc-social-block spc-social spc-social-b smart-head-social">
                       <a
-                        href="#"
+                        href="https://www.facebook.com/people237com"
                         className="link service s-facebook"
                         target="_blank"
                         rel="nofollow noopener"
@@ -650,7 +674,7 @@ export default function RootLayout({
                         <span className="visuallyhidden">Facebook</span>
                       </a>
                       <a
-                        href="#"
+                        href="https://x.com/Compeople237"
                         className="link service s-twitter"
                         target="_blank"
                         rel="nofollow noopener"
@@ -659,23 +683,33 @@ export default function RootLayout({
                         <span className="visuallyhidden">X (Twitter)</span>
                       </a>
                       <a
-                        href="#"
+                        href="https://www.dailymotion.com/people237TV"
                         className="link service s-instagram"
                         target="_blank"
                         rel="nofollow noopener"
-                      >
-                        <i className="icon tsi tsi-instagram" />{" "}
-                        <span className="visuallyhidden">Instagram</span>
+                        style={{fontWeight:700}}
+                      >                        
+                        {" "}d
                       </a>
                       <a
-                        href="#"
-                        className="link service s-vimeo"
-                        target="_blank"
-                        rel="nofollow noopener"
-                      >
-                        <i className="icon tsi tsi-vimeo" />{" "}
-                        <span className="visuallyhidden">Vimeo</span>
-                      </a>
+                    href="#"
+                    className="link service s-youtube"
+                    target="_blank"
+                    rel="nofollow noopener"
+                  >
+                     <i className="icon tsi tsi-youtube">
+                     <FaYoutube />
+  </i>
+                  </a>
+                  <a
+                    href="#"
+                    className="link service s-instagram"
+                    target="_blank"
+                    rel="nofollow noopener"
+                  >
+                    <i className="icon tsi tsi-instagram" />{" "}
+                    <span className="visuallyhidden">Instagram</span>
+                  </a>
                     </div>
                   </div>
 
