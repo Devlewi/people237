@@ -1,3 +1,5 @@
+import SubscribeForm from "./NewsletterForm";
+
 const NewsleterComponent = () => {
   return (
     <>
@@ -26,53 +28,8 @@ const NewsleterComponent = () => {
                                       {/*p>Get the latest creative news from SmartMag about art
 																&amp; design.</p*/}
                                     </div>
-                                    <form
-                                      method="post"
-                                      action="https://exocrew.us2.list-manage.com/subscribe/post?u=80cb35f637e636563aeaa0499&id=77f92c609a"
-                                      className="form fields-style fields-full"
-                                      target="_blank"
-                                      rel="noopener"
-                                    >
-                                      <div className="main-fields">
-                                        <p className="field-email">
-                                          <input
-                                            type="email"
-                                            name="EMAIL"
-                                            placeholder="Votre adresse email..."
-                                          />
-                                        </p>
-                                        <p className="field-submit">
-                                          <input
-                                            type="submit"
-                                            defaultValue="S'abonner"
-                                            style={{
-                                              backgroundColor:
-                                                "#cd8d25 !important",
-                                            }}
-                                          />
-                                        </p>
-                                      </div>
-                                      <p className="disclaimer">
-                                        <label>
-                                          <input
-                                            type="checkbox"
-                                            name="privacy"
-                                          />
-                                          En vous inscrivant, vous acceptez nos
-                                          conditions d&apos;utilisation et{" "}
-                                          <a
-                                            href="#"
-                                            style={{
-                                              color: "#dc9000",
-                                              fontWeight: "bolder",
-                                            }}
-                                          >
-                                            notre politique.
-                                          </a>{" "}
-                                          de confidentialité{" "}
-                                        </label>
-                                      </p>
-                                    </form>
+                                    <SubscribeForm/>
+                                    
                                   </div>
                                 </div>
                               </div>

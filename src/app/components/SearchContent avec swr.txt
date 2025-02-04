@@ -10,7 +10,6 @@ import { fr } from "date-fns/locale";
 import { truncateTitle } from "@/utils/stringUtils";
 import he from "he";
 
-
 interface Article {
   id: number;
   slug: string;
@@ -43,7 +42,6 @@ const SearchContent = () => {
   // Utilisation de SWR pour récupérer les résultats
   const { data, error, isLoading } = useSWR(apiUrl, fetcher, { revalidateOnFocus: false });
 
-
   // Gérer l'état des résultats et de la pagination
   const results = data?.results || [];
   const totalPages = data?.pagination?.total_pages || 1;
@@ -55,11 +53,9 @@ const SearchContent = () => {
     }
   };
 
-
-
   return (
     <div className="container">
-      <div className="search-container" style={{ padding: "30px 0", marginTop:20}}>
+      <div className="search-container" style={{ padding: "20px 0"}}>
         <div className="row justify-content-center">
           <div className="col-12 col-md-8">
             <div className="form-inline d-flex justify-content-center">
@@ -90,7 +86,7 @@ const SearchContent = () => {
           </div>
         </div>
       </div>
-<br/>
+
       {isLoading && <p className="text-center">Chargement...</p>}
       {error && <p className="text-center text-danger">Erreur lors du chargement des données.</p>}
 
@@ -159,7 +155,7 @@ const SearchContent = () => {
 
       {/* Pagination */}
       {results.length > 0 && (
-        <div className="pagination-container text-center" style={{marginBottom:40, marginTop:40 }}>
+        <div className="pagination-container text-center" style={{marginBottom:40 }}>
           <button
             className="btn btn-primary"
             onClick={() => setPage(page - 1)}
@@ -179,9 +175,7 @@ const SearchContent = () => {
           </button>
         </div>
       )}
-    
     </div>
-    
   );
 };
 

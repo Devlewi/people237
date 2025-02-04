@@ -4,7 +4,9 @@ import CategoryContent from "@/app/components/CategoryContent";
 // Fonction pour récupérer les données de la sidebar via l'API
 async function fetchSidebarData() {  
   // https://controlpanel.people237.com/wp-json/articles/homepage
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/wp-json/articles/homepage`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/wp-json/articles/homepage`,{
+    next: { revalidate: 60 },
+  });
   const data = await res.json();
   return data.recap.latestposts; // Retourner uniquement les articles de 'latestposts'
 }
@@ -14,10 +16,12 @@ async function fetchSidebarData() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params; // ⚠️ Correction ici : "await params"
   //const res = await fetch(`https://controlpanel.people237.com/wp-json/custom-api/publications/slug-categorie/${slug}`);
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/wp-json/custom-api/publications/slug-categorie/${slug}`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/wp-json/custom-api/publications/slug-categorie/${slug}`,{
+    next: { revalidate: 60 },
+  });
 
   const data = await res.json();
-  console.log(data.category_name);
+  //console.log(data.category_name);
 
   // Toujours récupérer le nom de la catégorie, même si les articles sont absents
   const categoryName = data.category_name || "Catégorie inconnue";  // Nom de la catégorie
@@ -60,7 +64,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
     // Récupérer les articles de la catégorie via l'API, en incluant le paramètre de la page
     //const res = await fetch(`https://controlpanel.people237.com/wp-json/custom-api/publications/slug-categorie/${slug}?page=${currentPage}`);
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/wp-json/custom-api/publications/slug-categorie/${slug}?page=${currentPage}`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/wp-json/custom-api/publications/slug-categorie/${slug}?page=${currentPage}`,{
+      next: { revalidate: 60 },
+    });
 
     const data = await res.json();
   

@@ -32,7 +32,9 @@ export async function generateMetadata({
   */
 
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/wp-json/custom/v1/article/${slug}`
+    `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/wp-json/custom/v1/article/${slug}`,{
+      next: { revalidate: 60 },
+    }
   );
   
   const post = await res.json();
@@ -48,11 +50,15 @@ export async function generateMetadata({
   };
 }
 
+
 // Fonction qui récupère les données côté serveur
+////"https://controlpanel.people237.com/wp-json/articles/homepage",{
 const fetchData = async () => {
   try {
     const response = await fetch(
-      "https://controlpanel.people237.com/wp-json/articles/homepage"
+    `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/wp-json/articles/homepage`,{      
+        next: { revalidate: 60 },
+      }
     ); // Remplacez par votre URL d'API
     const data = await response.json();
 
@@ -77,9 +83,13 @@ const ArticleDetail = async ({
   const datasidebar = await fetchData();
   //console.log(datasidebar);
 
+
+  //`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/wp-json/articles/homepage`,{      
   try {
     const res = await fetch(
-      `https://controlpanel.people237.com/wp-json/custom/v1/article/${slug}`
+      `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/wp-json/custom/v1/article/${slug}`,{
+        next: { revalidate: 60 },
+      }
     );
 
     //console.log(res);
