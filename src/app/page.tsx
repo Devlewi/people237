@@ -62,13 +62,15 @@ export default async function Home() {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         <title>PEOPLE 237</title>
+
       </Head>
           {/* Passer les données à FeaturedInfo */}
           <FeaturedInfo alauneData={data.alaune || []} />
 
         {/* Passer les données à HomePageContentComponent */}
         <HomePageContentComponent recapData={data.recap || {}}/>
-
+        
+        
     </div>
   )
 }

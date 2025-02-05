@@ -1,9 +1,12 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale"; // Pour la langue française
 import he from "he";
 import { formatNumber } from "@/utils/formatedNumber";
+import Banner336x280 from "./Banner336x280";
+
 
 type Article = {
   id: number;
@@ -21,9 +24,13 @@ type LatestPostSidebarHomeProps = {
   articlesidebarunhome: Article[];
 };
 
+
+
 const SidebarUnHome: React.FC<LatestPostSidebarHomeProps> = ({
   articlesidebarunhome,
 }) => {
+
+  
   return (
     <>
       <section
@@ -43,15 +50,7 @@ const SidebarUnHome: React.FC<LatestPostSidebarHomeProps> = ({
           {/* espace publicitaire */}
           <div className="loop loop-grid loop-grid-base grid grid-1 md:grid-1 xs:grid-Ò1">
               <article className="l-post grid-post grid-base-post">
-                <Link href="#">
-                  <Image
-                    src="https://client.cynomedia-africa.com/www/images/1f65aafe424a56c464da81bfce86d18d.jpg"
-                    className="img-responsive"
-                    width={336}
-                    height={280}
-                    alt="image"
-                  />
-                </Link>
+                <Banner336x280/>
               </article>
             </div>
             {/* espace publicitaire */}

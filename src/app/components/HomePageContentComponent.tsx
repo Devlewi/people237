@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import LatestPostPeopleHome from "./LatestPostPeopleHome";
-import Banner728x80Home from "./Banner728x80Home";
 import LatestPostPortraitHome from "./LatestPostPortraitHome";
 import LatestPostEventHome from "./LatestPostEventHome";
 import LatestPostBonPlanHome from "./LatestPostBonPlanHome";
@@ -77,7 +76,7 @@ const { articles,latestposts,mostviewed } = recapData;
                             </div>
                           </div>
                           {/* espace publicitaire */}
-                          <Banner728x80Home/>
+                          {/* <Banner728x80Home/> */}
                         </div>
                       </div>
                     </div>

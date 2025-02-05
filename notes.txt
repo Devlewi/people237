@@ -1278,3 +1278,7 @@ Fonctionnement du cache avec revalidate :
 Après 60 secondes, Next.js vérifie s'il doit mettre à jour le cache en régénérant la page.
 Les données sont mises en cache et Next.js ne fait pas une nouvelle requête backend tant que le cache n'a pas expiré.
 Le serveur backend est uniquement appelé quand les données changent ou si la période de revalidate est atteinte.
+
+
+
+https://forum.revive-adserver.com/topic/6305-anyone-using-revive-with-react-app/

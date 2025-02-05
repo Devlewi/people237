@@ -14,6 +14,9 @@ import Image from "next/image";
 import TransitionPage from "./components/TransitionPage";
 import Link from "next/link";
 import {FaYoutube } from "react-icons/fa";
+import StickyFooter from "./components/StickyFooter";
+
+
 
 
 
@@ -200,6 +203,8 @@ export default function RootLayout({
     { title: "VIDEOS", icon: "typcn-video", link: "/categorie/videos" },
   ];
 
+
+    
   useEffect(() => {
     // Déclenchez l'animation lors d'un changement de route
     setIsTransitioning(true);
@@ -311,6 +316,7 @@ export default function RootLayout({
     <html lang="fr">
       <head>
         <>
+        
           {/* Typicons CSS */}
           <link
             href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css"
@@ -347,6 +353,8 @@ export default function RootLayout({
           `,
             }}
           />
+
+
 
           {/* Delay Load JS Script */}
           <Script
@@ -958,8 +966,11 @@ export default function RootLayout({
                 {isTransitioning && <TransitionPage />}
 
                 {children}
-
+                                
+                
+                <StickyFooter />
                 <BottomMenu />
+
               </div>
             </div>
 

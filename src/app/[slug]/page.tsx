@@ -6,6 +6,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 import SidebarUnHome from "../components/SidebarUnHome";
 import NotFound from "../not-found";
+import Banner336x280 from "../components/Banner336x280";
 
 
 
@@ -338,14 +339,9 @@ const ArticleDetail = async ({
                           style={{ fontSize: 14 }}
                         >
                           <center>
-                            <Image
-                              src="https://client.cynomedia-africa.com/www/images/4cdb4e14b423eb93c8274478e553715f.jpg"
-                              width={336}
-                              height={280}
-                              alt="image"
-                            />
+                            <Banner336x280/>
                           </center>
-                          <br />
+                          <br /><br />
                           <p style={{ fontWeight: "bolder" }}>
                             {" "}
                             Suivez l&apos;information en direct sur notre chaîne{" "}
