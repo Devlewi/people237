@@ -50,7 +50,7 @@ const SidebarUnHome: React.FC<LatestPostSidebarHomeProps> = ({
           {/* espace publicitaire */}
           <div className="loop loop-grid loop-grid-base grid grid-1 md:grid-1 xs:grid-Ò1">
               <article className="l-post grid-post grid-base-post">
-                <Banner336x280/>
+              <Banner336x280/>
               </article>
             </div>
             {/* espace publicitaire */}

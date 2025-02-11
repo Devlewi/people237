@@ -316,7 +316,8 @@ export default function RootLayout({
     <html lang="fr">
       <head>
         <>
-        
+          <link rel="alternate" type="application/rss+xml" title="Flux RSS People237" href="/feed" />
+
           {/* Typicons CSS */}
           <link
             href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css"

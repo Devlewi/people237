@@ -1282,3 +1282,48 @@ Le serveur backend est uniquement appelé quand les données changent ou si la p
 
 
 https://forum.revive-adserver.com/topic/6305-anyone-using-revive-with-react-app/
+
+
+
+
+
+
+
+
+
+Pour tester la montée en charge de ton site Next.js et de ton backend WordPress, il faut simuler différents scénarios :
+
+Charge faible : 10-50 utilisateurs
+Charge moyenne : 100-500 utilisateurs
+Charge élevée : 1000+ utilisateurs
+
+k6 run tests/stress-test.js
+
+
+📌 3. Analyser les résultats
+Après l’exécution, k6 affichera des statistiques comme :
+
+✅ Taux de succès (%) : combien de requêtes sont retournées en 200 OK
+⚠️ Taux d’erreur (%) : s'il y a des requêtes en 500 (erreur serveur)
+⏱️ Temps de réponse moyen et max
+🔥 Charge CPU et mémoire (si tu fais tourner htop sur le serveur en parallèle)
+
+
+
+
+
+
+
+
+Page d'accueil : La première requête vérifie l'accès à la page d'accueil.
+Catégories : Le script teste successivement les pages pour les catégories Portrait, Cinéma & Arts, People Camer et Sport (avec pagination).
+Détails d'articles : Ensuite, il teste plusieurs pages d'articles spécifiques en fonction des URLs que tu as données.
+
+50 utilisateurs simulés pendant 30 secondes.
+200 utilisateurs simulés pendant 1 minute.
+500 utilisateurs simulés pendant 30 secondes.
+1000 utilisateurs simulés pendant 1 minute.
+Redescente du nombre d'utilisateurs pour simuler une réduction de la charge après les tests.
+
+
+MonsterInsights, Google Analytics Dashboard for WP
