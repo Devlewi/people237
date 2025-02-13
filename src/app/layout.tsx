@@ -640,6 +640,7 @@ export default function RootLayout({
                     {" "}d
 
                   </a>
+                  {/*
                   <a
                     href="#"
                     className="link service s-youtube"
@@ -650,6 +651,7 @@ export default function RootLayout({
                      <FaYoutube />
   </i>
                   </a>
+                  */}
                   <a
                     href="#"
                     className="link service s-instagram"
@@ -700,6 +702,7 @@ export default function RootLayout({
                       >                        
                         {" "}d
                       </a>
+                     {/*
                       <a
                     href="#"
                     className="link service s-youtube"
@@ -710,6 +713,7 @@ export default function RootLayout({
                      <FaYoutube />
   </i>
                   </a>
+                     */}
                   <a
                     href="https://www.instagram.com/peoplecd237/"
                     className="link service s-instagram"
@@ -1104,6 +1108,17 @@ export default function RootLayout({
                             </article>
                           </div>
                         </div>
+                        <br/><br/>
+                        <Link href={"/categorie/top-stars"}>
+                          <div className="widget-title block-head block-head-ac block-head block-head-ac block-head-b is-left has-style">
+                            <h5
+                              className="heading"
+                              style={{ color: "#dc9000" }}
+                            >
+                              Top stars
+                            </h5>
+                          </div>
+                          </Link>
                       </section>
                     </div>
                     <div className="widget col-md-2 ts-block-widget smartmag-widget-posts-small">
@@ -1189,7 +1204,20 @@ export default function RootLayout({
                               </article>
                             </div>
                           </div>
+                          <br/><br/>
+                        
+                          <Link href={"/categorie/societes"}>
+                          <div className="widget-title block-head block-head-ac block-head block-head-ac block-head-b is-left has-style">
+                            <h5
+                              className="heading"
+                              style={{ color: "#dc9000" }}
+                            >
+                              Société
+                            </h5>
+                          </div>
+                            </Link>
                         </section>
+                        
                       </div>
                     </div>
                     <div className="widget col-md-2 ts-block-widget smartmag-widget-posts-small">
@@ -1250,27 +1278,9 @@ export default function RootLayout({
                           </div>
                           <br />
                           <br />
-                          <Link href={"/categorie/top-stars"}>
-                          <div className="widget-title block-head block-head-ac block-head block-head-ac block-head-b is-left has-style">
-                            <h5
-                              className="heading"
-                              style={{ color: "#dc9000" }}
-                            >
-                              Top stars
-                            </h5>
-                          </div>
-                          </Link>
+                          
 
-                          <Link href={"/categorie/societes"}>
-                          <div className="widget-title block-head block-head-ac block-head block-head-ac block-head-b is-left has-style">
-                            <h5
-                              className="heading"
-                              style={{ color: "#dc9000" }}
-                            >
-                              Société
-                            </h5>
-                          </div>
-                            </Link>
+                        
                             <Link href={"/categorie/sport"}>
                           <div className="widget-title block-head block-head-ac block-head block-head-ac block-head-b is-left has-style">
                             <h5
@@ -1358,7 +1368,7 @@ export default function RootLayout({
                       <span className="visuallyhidden">Facebook</span>
                     </a>
                     <a
-                      href="#"
+                      href="https://x.com/Compeople237"
                       className="link service s-twitter"
                       target="_blank"
                       rel="nofollow noopener"
@@ -1412,12 +1422,10 @@ export default function RootLayout({
                           id="menu-item-352"
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-6 current_page_item menu-item-352"
                         >
-                          <a
-                            href="#"
+                          <a href="https://people243.com/" className="white-title"
                             aria-current="page"
-                            className="white-title"
                           >
-                            <i className="typcn typcn-world" /> people225.com
+                            <i className="typcn typcn-world" /> people243.com
                           </a>
                         </li>
                         <li
@@ -1425,10 +1433,10 @@ export default function RootLayout({
                           className="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-10 menu-item-354"
                         >
                           <a
-                            href="#"
+                            href="https://journalducameroun.com"
                             className="white-title"
                           >
-                            <i className="typcn typcn-world" /> people223.com
+                            <i className="typcn typcn-world" /> journalducameroun.com
                           </a>
                         </li>
                         <li
@@ -1436,10 +1444,10 @@ export default function RootLayout({
                           className="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-6 menu-item-355"
                         >
                           <a
-                            href="#"
+                            href="https://237lions.com"
                             className="white-title"
                           >
-                            <i className="typcn typcn-world" /> people228.com
+                            <i className="typcn typcn-world" /> 237lions.com
                           </a>
                         </li>
                         <li
@@ -1447,12 +1455,13 @@ export default function RootLayout({
                           className="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-11 menu-item-357"
                         >
                           <a
-                            href="#"
+                            href="https://people237.com"
                             className="white-title"
                           >
-                            <i className="typcn typcn-world" /> people229.com
+                            <i className="typcn typcn-world" /> people237.com
                           </a>
                         </li>
+                        {/*
                         <li
                           id="menu-item-353"
                           className="menu-item menu-item-type-custom menu-item-object-custom menu-item-353"
@@ -1469,6 +1478,7 @@ export default function RootLayout({
                             <i className="typcn typcn-world" /> people224.com
                           </a>
                         </li>
+                        */}
                       </ul>
                     </div>
                   </div>

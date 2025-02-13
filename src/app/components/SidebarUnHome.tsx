@@ -47,12 +47,7 @@ const SidebarUnHome: React.FC<LatestPostSidebarHomeProps> = ({
         </div>
         <div className="block-content">
           <div className="loops-mixed">
-          {/* espace publicitaire */}
-          <div className="loop loop-grid loop-grid-base grid grid-1 md:grid-1 xs:grid-Ò1">
-              <article className="l-post grid-post grid-base-post">
-              <Banner336x280/>
-              </article>
-            </div>
+
             {/* espace publicitaire */}
 
             <div className="loop loop-small loop-small-a loop-sep loop-small-sep grid grid-1 md:grid-1 sm:grid-1 xs:grid-1">
@@ -66,7 +61,7 @@ const SidebarUnHome: React.FC<LatestPostSidebarHomeProps> = ({
                       pathname: `/${article.slug}`, // URL dynamique
                     }}
                     className="image-link media-ratio ar-bunyad-thumb"
-                    title="Doctors’ Advise on Sanitizers You Should Not Use"
+                    title=""
                   >
                     <Image
                       src={article.featured_image ? article.featured_image : "/images/default.png"}
@@ -136,7 +131,12 @@ const SidebarUnHome: React.FC<LatestPostSidebarHomeProps> = ({
               ))}
             </div>
             <br />
-
+          {/* espace publicitaire */}
+            <div className="loop loop-grid loop-grid-base grid grid-1 md:grid-1 xs:grid-Ò1">
+              <article className="l-post grid-post grid-base-post">
+              <Banner336x280/>
+              </article>
+            </div>
             
 
           </div>
