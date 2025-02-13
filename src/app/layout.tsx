@@ -711,7 +711,7 @@ export default function RootLayout({
   </i>
                   </a>
                   <a
-                    href="#"
+                    href="https://www.instagram.com/peoplecd237/"
                     className="link service s-instagram"
                     target="_blank"
                     rel="nofollow noopener"
@@ -1349,7 +1349,7 @@ export default function RootLayout({
                 <div className="ts-contain inner">
                   <div className="spc-social-block spc-social spc-social-b ">
                     <a
-                      href="#"
+                      href="https://www.facebook.com/people237com/?locale=fi_FI&_rdr"
                       className="link service s-facebook"
                       target="_blank"
                       rel="nofollow noopener"
@@ -1367,7 +1367,18 @@ export default function RootLayout({
                       <span className="visuallyhidden">X (Twitter)</span>
                     </a>
                     <a
-                      href="#"
+                    href="https://www.dailymotion.com/people234TV"
+                    className="link service s-instagram"
+                    target="_blank"
+                    rel="nofollow noopener"
+                    style={{fontWeight:700}}
+                  >
+                    
+                    {" "}d
+
+                  </a>
+                    <a
+                      href="https://www.instagram.com/peoplecd237/"
                       className="link service s-instagram"
                       target="_blank"
                       rel="nofollow noopener"
@@ -1375,6 +1386,7 @@ export default function RootLayout({
                       <i className="icon tsi tsi-instagram" />{" "}
                       <span className="visuallyhidden">Instagram</span>
                     </a>
+                    {/*
                     <a
                       href="#"
                       className="link service s-pinterest"
@@ -1384,6 +1396,7 @@ export default function RootLayout({
                       <i className="icon tsi tsi-pinterest-p" />{" "}
                       <span className="visuallyhidden">Pinterest</span>
                     </a>
+                    */}
                   </div>
                   <div className="links">
                     <div className="menu-footer-links-container">
@@ -1400,7 +1413,7 @@ export default function RootLayout({
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-6 current_page_item menu-item-352"
                         >
                           <a
-                            href="index.html"
+                            href="#"
                             aria-current="page"
                             className="white-title"
                           >
@@ -1412,7 +1425,7 @@ export default function RootLayout({
                           className="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-10 menu-item-354"
                         >
                           <a
-                            href="categorie-article.html"
+                            href="#"
                             className="white-title"
                           >
                             <i className="typcn typcn-world" /> people223.com
@@ -1423,7 +1436,7 @@ export default function RootLayout({
                           className="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-6 menu-item-355"
                         >
                           <a
-                            href="categorie-article.html"
+                            href="#"
                             className="white-title"
                           >
                             <i className="typcn typcn-world" /> people228.com
@@ -1434,7 +1447,7 @@ export default function RootLayout({
                           className="menu-item menu-item-type-taxonomy menu-item-object-category menu-cat-11 menu-item-357"
                         >
                           <a
-                            href="categorie-article.html"
+                            href="#"
                             className="white-title"
                           >
                             <i className="typcn typcn-world" /> people229.com
@@ -1444,7 +1457,7 @@ export default function RootLayout({
                           id="menu-item-353"
                           className="menu-item menu-item-type-custom menu-item-object-custom menu-item-353"
                         >
-                          <a href="#" className="white-title">
+                          <a href="https://people243.com/" className="white-title">
                             <i className="typcn typcn-world" /> people243.com
                           </a>
                         </li>
@@ -1460,8 +1473,8 @@ export default function RootLayout({
                     </div>
                   </div>
                   <div className="copyright white-title">
-                    © 2024 Copyright People237.com ©, All Rights Reserved. |
-                    Mentions Légales{" "}
+                    © 2024 Copyright People237.com ©, All Rights Reserved. 
+                    {/* | Mentions Légales{" "} */}
                   </div>
                 </div>
               </div>

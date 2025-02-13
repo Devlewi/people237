@@ -22,7 +22,7 @@ const NewsleterComponent = () => {
                                         className="typcn typcn-mail"
                                         style={{ fontSize: 34 }}
                                       />{" "}
-                                      S&apos;abonner à la Newsletter{" "}
+                                      s&apos;abonner à la Newsletter{" "}
                                     </h3>
                                     <div className="base-text message">
                                       {/*p>Get the latest creative news from SmartMag about art

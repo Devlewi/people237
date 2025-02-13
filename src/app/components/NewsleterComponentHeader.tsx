@@ -13,7 +13,7 @@ const NewsleterComponentHeader = () => {
               <div className="spc-newsletter spc-newsletter-b spc-newsletter-center spc-newsletter-sm">
                 <div className="bg-wrap" />
                 <div className="inner">
-                  <h3 className="heading">S&apos;abonner à la Newsletter </h3>
+                  <h3 className="heading">s&apos;abonner à la newsletter </h3>
                   <div className="base-text message">
                     <p>
                       Recevez les dernières actualités directement dans votre
