@@ -13,7 +13,6 @@ import BottomMenu from "./components/BottomMenu";
 import Image from "next/image";
 import TransitionPage from "./components/TransitionPage";
 import Link from "next/link";
-import {FaYoutube } from "react-icons/fa";
 import StickyFooter from "./components/StickyFooter";
 
 
