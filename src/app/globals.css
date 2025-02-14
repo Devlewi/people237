@@ -6948,3 +6948,8 @@ article{
   text-overflow: ellipsis;
   height: 4rem; /* Ajuste la hauteur en fonction de la police */
 }
+
+
+.article-content{
+    text-align: justify !important;
+}
