@@ -6,7 +6,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 import SidebarUnHome from "../components/SidebarUnHome";
 import NotFound from "../not-found";
-import Banner336x280 from "../components/Banner336x280";
+import ContentDetailPost from "../components/ContentDetailPost";
 
 
 
@@ -328,19 +328,18 @@ const ArticleDetail = async ({
                       </div>
 
                       <br />
-
-                      <div
-                        className="article-content"
-                        dangerouslySetInnerHTML={{ __html: article.content }}
-                      ></div>
+                      
+                      <ContentDetailPost serverContent={article.content}/>
                       <div className="post-content-wrap has-share-float">
                         <div
                           className="post-content cf entry-content content-spacious"
                           style={{ fontSize: 14 }}
                         >
+                          {/*
                           <center>
                             <Banner336x280/>
                           </center>
+                          */}
                           <br /><br />
                           <p style={{ fontWeight: "bolder" }}>
                             {" "}

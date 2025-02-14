@@ -14,6 +14,7 @@ import Image from "next/image";
 import TransitionPage from "./components/TransitionPage";
 import Link from "next/link";
 import StickyFooter from "./components/StickyFooter";
+import PubAfterNav from "./components/PubAfterNav";
 
 
 
@@ -775,7 +776,7 @@ export default function RootLayout({
                     </button>
                   </div>
                   <div className="items items-center ">
-                    <div className="nav-wrap">
+                    <div className="nav-wrap">                                          
                       {/*menu desktop*/}
                       <nav className="navigation navigation-main nav-hov-a">
                         <ul id="menu-main-menu" className="menu">
@@ -805,7 +806,6 @@ export default function RootLayout({
                           ))}
                         </ul>
                       </nav>
-
                       {/*menu desktop*/}
                     </div>
                   </div>
@@ -832,7 +832,8 @@ export default function RootLayout({
                   </div>
                 </div>
               </div>
-            </div>
+            </div>            
+            
             <div
               className="smart-head smart-head-a smart-head-mobile"
               id="smart-head-mobile"
@@ -884,94 +885,32 @@ export default function RootLayout({
                   <div className="items items-left ">
                     <div className="nav-wrap">
                       {/*menu mobile*/}
-
-                      <nav className="navigation navigation-scroll nav-hov-b" style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "10px 0" }}>
-      <div style={{ display: "flex", alignItems: "center", gap: "20px", fontSize: 14, fontWeight: 700, fontFamily: "Roboto Slab, sans-serif" }}>
-        {navItems.map((item, index) => (
-          <Link key={index} href={item.link} legacyBehavior>
-            <a style={{ display: "flex", alignItems: "center", gap: "5px", textDecoration: "none", color: "inherit" }}>
-              <i className={`typcn ${item.icon}`} /> {item.title}
-            </a>
-          </Link>
-        ))}
-      </div>
-    </nav>
-
-                      {/*
-                      
-                      <nav className="navigation navigation-scroll nav-hov-b">
-                        <ul id="menu-scrolling-menu-mobile" className="menu">
-                          <li className="menu-item menu-item-has-children">
-                            <Link href={"/categorie/people"}>
-                              <i className="typcn typcn-home" /> People
-                            </Link>
-                          </li>
-                          <li className="menu-item">
-                            <Link href={"/categorie/people-portrait"}>
-                              <i className="typcn typcn-camera" /> Portraits
-                            </Link>
-                          </li>
-                          <li className="menu-item menu-item-has-children">
-                            <Link href={"/categorie/events"}>
-                              <i className="typcn typcn-calendar" /> Events
-                            </Link>
-                          </li>
-                          <li className="menu-item menu-item-has-children">
-                            <Link href={"/categorie/decouvertes"}>
-                              <i className="typcn typcn-camera" /> Découvertes
-                            </Link>
-                          </li>
-                          <li className="menu-item menu-item-has-children">
-                            <Link href={"/categorie/bons-plans"}>
-                              <i className="typcn typcn-star" /> Bons plans
-                            </Link>
-                          </li>
-                          <li className="menu-item">
-                            <Link href={"/categorie/top-star"}>
-                              <i className="typcn typcn-star-outline" /> Top
-                              stars
-                            </Link>
-                          </li>
-                          <li className="menu-item">
-                            <Link href={"/categorie/societes"}>
-                              <i className="typcn typcn-world" /> Société
-                            </Link>
-                          </li>
-                          <li className="menu-item">
-                            <Link href={"/categorie/sport"}>
-                              <i className="typcn typcn-flag" /> Sports
-                            </Link>
-                          </li>
-                          <li className="menu-item">
-                            <Link href={"/categorie/galerie-photos"}>
-                              <i className="typcn typcn-image" /> Galerie Photos
-                            </Link>
-                          </li>
-                          <li className="menu-item">
-                            <Link href={"/categorie/video"}>
-                              <i className="typcn typcn-video" /> Vidéos
-                            </Link>
-                          </li>
-                        </ul>
-                      </nav>
-                      */}
-                      {/*menu mobile*/}
+                        <nav className="navigation navigation-scroll nav-hov-b" style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "10px 0" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "20px", fontSize: 14, fontWeight: 700, fontFamily: "Roboto Slab, sans-serif" }}>
+          {navItems.map((item, index) => (
+            <Link key={index} href={item.link} legacyBehavior>
+              <a style={{ display: "flex", alignItems: "center", gap: "5px", textDecoration: "none", color: "inherit" }}>
+                <i className={`typcn ${item.icon}`} /> {item.title}
+              </a>
+            </Link>
+          ))}
+        </div>
+                        </nav>
+                      {/*menu mobile*/}                      
                     </div>
-                  </div>
+                  </div>                  
                   <div className="items items-center empty"></div>
                   <div className="items items-right empty"></div>
                 </div>
               </div>
             </div>
+            <PubAfterNav/>
             <div className="main-full">
               <div id="post-6" className="main-wrap">
                 {/*<div className="main-wrap">{children}</div>*/}
                 {/*loading && <Loader />} {/* Affichage du loader */}
                 {isTransitioning && <TransitionPage />}
-
-                {children}
-                                
-                
+                {children}                                                
                 <StickyFooter />
                 <BottomMenu />
 
