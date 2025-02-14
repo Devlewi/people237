@@ -30,6 +30,18 @@ export default function RootLayout({
   const [isTransitioning, setIsTransitioning] = useState(false);
   const pathname = usePathname(); // Utilisez le hook pour détecter les changements de route
 
+
+  const options: Intl.DateTimeFormatOptions = {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "Africa/Douala", // Fuseau horaire pour Yaoundé
+  };
+
+  const dateTime = new Date().toLocaleDateString("fr-FR", options);
+
+
   const menuItems = [
     {
       title: "People",
@@ -745,20 +757,24 @@ export default function RootLayout({
                     </Link>
                   </div>
 
-                  {/*div class="items items-right ">
+                           <div className="items items-right">
+  {/*
+  <a
+    href="http://eepurl.com/hq-3Xb"
+    className="ts-button ts-button-alt ts-button1"
+    target="_blank"
+    rel="noopener"
+  >
+    Subscribe{" "}
+  </a>
+  */}
+  <a href="#auth-modal" className="auth-link has-icon">
+    {/* <i className="icon tsi tsi-user-circle-o" /> */}
 
-						<a href="http://eepurl.com/hq-3Xb" class="ts-button ts-button-alt ts-button1" target="_blank"
-							rel="noopener">
-							Subscribe </a>
+    <span className="label">{`Yaoundé, ${dateTime}`}</span>
 
-
-						<a href="#auth-modal" class="auth-link has-icon">
-							<i class="icon tsi tsi-user-circle-o"></i>
-
-							<span class="label">Login</span>
-						</a>
-
-					</div*/}
+  </a>
+</div>
                 </div>
               </div>
 
