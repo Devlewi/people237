@@ -116,7 +116,7 @@ const DetailsMentionsLegales = () => {
                         <div>
                           En application des dispositions de la loi n° 78-17 du 6 janvier 1978 dite « Informatique et Libertés », toute personne physique dispose des droits d’accès, de modification, de rectification et de suppression des données la concernant. l&apos;utilisateur peut exercer ces droits en écrivant à l’adresse suivante :
                           <br />
-                          DANO COMMUNICATIONS – Carrefour Elig-Essono, A côté de la Direction Générale FNE, Yaoundé, Cameroun
+                          CYNOMEDIA – Carrefour Elig-Essono, A côté de la Direction Générale FNE, Yaoundé, Cameroun
                           <br />
                           Adresse email :  contact@cynomedia.com
                         </div>
