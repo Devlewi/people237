@@ -1270,7 +1270,7 @@ export default function RootLayout({
                                     <h4 className="is-title post-title">
                                       <a href="#" className="white-title">
                                         <i className="typcn typcn-chevron-right" />{" "}
-                                        Immeuble Hibiscus Rue Technopark Fouda,
+                                        Carrefour Elig Essono, Yaoundé,
                                         Yaoundé Cameroun
                                       </a>
                                     </h4>
@@ -1283,7 +1283,7 @@ export default function RootLayout({
                                     <h4 className="is-title post-title">
                                       <a href="#" className="white-title">
                                         <i className="typcn typcn-chevron-right" />{" "}
-                                        ci@cynomedia.com
+                                        contact@cynomedia.com
                                       </a>
                                     </h4>
                                   </div>
