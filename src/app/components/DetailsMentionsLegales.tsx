@@ -37,7 +37,7 @@ const DetailsMentionsLegales = () => {
                         fontSize: 32,
                       }}
                     >
-                      Mentions légales
+                      MENTIONS LEGALES
                     </h1>
 
                     <br />
