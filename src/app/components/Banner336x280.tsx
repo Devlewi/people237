@@ -12,9 +12,8 @@ const Banner336x280: React.FC = () => {
   if (!isClient) return null; // Empêche le rendu côté serveur
 //text-align:center;background:#eae8e8;margin-top:0px;
   return (
-    <div className='col-md-6 justify-content-center' style={{textAlign:'center'}}>
+    <div style={{textAlign:'center'}}>
       {/* Affichage de l'iframe publicitaire */}
-      <center>
       <iframe
         id="a5699f99"
         name="a5699f99"
@@ -26,7 +25,6 @@ const Banner336x280: React.FC = () => {
         allow="autoplay"
         style={{ display: "block", margin: "0 auto" }}
       ></iframe>
-      </center>
     </div>
   );
 };
