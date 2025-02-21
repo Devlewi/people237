@@ -11,8 +11,10 @@ const Banner336x280: React.FC = () => {
 
   if (!isClient) return null; // Empêche le rendu côté serveur
 //text-align:center;background:#eae8e8;margin-top:0px;
-  return (
-    <div className='col-md-12 justify-content-center' style={{textAlign:'center', background:'#eae8e8'}}>
+  
+//<div className='col-md-12 justify-content-center' style={{textAlign:'center', background:'#eae8e8'}}>
+return (
+    <div className='' style={{textAlign:'center', background:'#eae8e8'}}>
       {/* Affichage de l'iframe publicitaire */}
       {/* font-size:11px;padding-top:18px; */}
       <center>
