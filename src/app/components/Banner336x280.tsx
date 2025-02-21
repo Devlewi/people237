@@ -23,8 +23,8 @@ const Banner336x280: React.FC = () => {
         src={`https://client.cynomedia-africa.com/www/delivery/afr.php?zoneid=208&cb=${Date.now()}`}
         frameBorder="0"
         scrolling="no"
-        width='100%' 
-        height='250'
+        width='336' 
+        height='280'
         allow="autoplay"
         style={{ display: "block", margin: "0 auto" }}
       ></iframe>
