@@ -117,7 +117,7 @@ const SearchContent = () => {
                     </Link>
                     <span className="cat-labels cat-labels-overlay c-overlay p-bot-left">
                       <Link
-                        href={`/categorie/${article.category}`}
+                        href={`#`}
                         className="category term-color-3"
                         rel="category"
                         tabIndex={-1}
@@ -129,7 +129,11 @@ const SearchContent = () => {
                   <div className="content">
                     <div className="post-meta post-meta-a has-below">
                       <h2 className="is-title post-title">
-                        <Link href={`/details/${article.slug}`} className="post-title-2">
+                        <Link 
+                        
+                        href={`/${article.slug}`}
+                        
+                        className="post-title-2">
                           {truncateTitle(he.decode(article.title), 10)}
                         </Link>
                       </h2>

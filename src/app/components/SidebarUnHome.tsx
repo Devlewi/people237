@@ -41,7 +41,7 @@ const SidebarUnHome: React.FC<LatestPostSidebarHomeProps> = ({
         <div className="block-head block-head-g is-left term-color-10">
           <h4 className="heading">
             <Link 
-            href="/details/"
+            href="#"
             >Derniers articles</Link>
           </h4>
         </div>

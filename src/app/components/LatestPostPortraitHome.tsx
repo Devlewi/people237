@@ -80,7 +80,13 @@ const LatestPostPortraitHome: React.FC<LatestPostPortraitHomeProps> = ({
               <div className="content">
                 <div className="post-meta post-meta-a has-below">
                   <h2 className="is-title post-title">
-                    <Link href="/details/" className="post-title-2">
+                    <Link 
+                    
+                    href={{
+                      pathname: `/${article.slug}`, // URL dynamique
+                    }}
+                    
+                    className="post-title-2">
                     {truncateTitle(he.decode(article.title), 7)}{" "}
                     </Link>
                   </h2>
