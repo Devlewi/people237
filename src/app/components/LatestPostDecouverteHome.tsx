@@ -53,7 +53,7 @@ const LatestPostDecouverteHome: React.FC<LatestPostDecouverteHomeProps> = ({
                       pathname: `/${article.slug}`, // URL dynamique
                     }}
                     className="image-link media-ratio ratio-16-9"
-                    title="Coco lago fait l’éloge de Coco Argenté"
+                    title={article.title}
                   >
                     <Image
                       src={article.featured_image ? article.featured_image : "/images/default.png"}
@@ -112,7 +112,7 @@ const LatestPostDecouverteHome: React.FC<LatestPostDecouverteHomeProps> = ({
                       </span>
                     </div>
                   </div>
-                  <div className="excerpt">
+                  <div className="excerpt post-exercpt">
                     <p>{removeTags(he.decode(article.excerpt))}</p>
                   </div>
                 </div>

@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale"; // Pour la langue française
-import he from "he";
 import { removeTags } from "@/utils/removeTags";
 import { formatNumber } from "@/utils/formatedNumber";
 import { truncateTitle } from "@/utils/stringUtils";
+import he from "he";
 
 type Article = {
   id: number;
@@ -19,56 +19,59 @@ type Article = {
   author: string;
 };
 
-type LatestPostGalerieHomeProps = {
-  articlegalery: Article[];
+type LatestPostAlaUneProps = {
+  articlesalaune: Article[];
 };
 
-const LatestPostGalerieHome: React.FC<LatestPostGalerieHomeProps> = ({
-  articlegalery,
+const LatestPostAlaUne: React.FC<LatestPostAlaUneProps> = ({
+  articlesalaune,
 }) => {
+  //console.log("COCO - articlesalaune");
+  //console.log(articlesalaune);
+
+
   return (
     <>
       <section
-        className="block-wrap block-grid block-sc mb-none"
-        data-id={24}
-        data-block='{"id":"grid","props":{"cat_labels":1,"cat_labels_pos":"bot-left","reviews":"radial","post_formats_pos":"center","load_more_style":"a","meta_cat_style":"text","media_style_shadow":0,"meta_sponsor":1,"meta_sponsor_logo":0,"meta_sponsor_label":"Sponsor: {sponsor}","meta_above":[],"meta_below":["author","date","comments"],"meta_sponsor_above":[],"meta_sponsor_below":["sponsor","date"],"media_ratio":"","media_ratio_custom":"","read_more":"none","content_center":0,"posts":6,"pagination":"1","pagination_type":"load-more","space_below":"none","container_width":66,"heading_colors":"force","heading":"*Latest* Posts","excerpt_length":15,"meta_sponsor_items_default":true,"query_type":"custom","sort_days":null,"carousel_dots":null,"is_sc_call":true,"meta_items_default":true}}'
+        className="block-wrap block-grid block-sc"
+        data-id={8}
+        style={{ marginTop: 20 }}
       >
         <div className="block-head block-head-c is-left">
           <h4 className="heading" style={{ fontSize: 25 }}>
             <span className="color">
-              {" "}
-              <i className="typcn typcn-image" style={{ fontSize: 30 }} />{" "}
-              Galerie Photos
+              <i className="typcn typcn-news" style={{ fontSize: 30 }} /> A la une
             </span>{" "}
           </h4>
         </div>
         <div className="block-content">
-          <div className="loop loop-grid loop-grid-base grid grid-2 md:grid-2 xs:grid-1">
-            {articlegalery.map((article) => (
+          {/*style={{border:"2px solid rgb(237 237 237)",borderRadius:"20px",padding:10}}*/}
+          <div className="loop loop-grid loop-grid-base grid grid-4 md:grid-4 xs:grid-1">
+            {articlesalaune.map((article) => (
               <article
-                className="l-post grid-post grid-base-post"
                 key={article.id}
+                className="l-post grid-post grid-base-post"                                
               >
                 <div className="media">
                   <Link
-                    href={{
+                     href={{
                       pathname: `/${article.slug}`, // URL dynamique
                     }}
                     className="image-link media-ratio ratio-16-9"
-                    title="Coco lago fait l’éloge de Coco Argenté"
+                    title="L’acteur Hervé Nguetch n’est plus un coeur à prendre"
                   >
                     <Image
                       src={article.featured_image ? article.featured_image : "/images/default.png"}
                       alt={article.title}
-                      layout="intrinsic"
-                      width={377}
-                      height={377} // Vous pouvez ajuster la hauteur en fonction du ratio
+                      layout="fill"
                       objectFit="cover"
+                      quality={75}
+                      priority={false}
                     />
                   </Link>
                   <span className="cat-labels cat-labels-overlay c-overlay p-bot-left">
                     <Link
-                      href="/categorie/culture/"
+                      href="#"
                       className="category term-color-3"
                       rel="category"
                       tabIndex={-1}
@@ -80,12 +83,13 @@ const LatestPostGalerieHome: React.FC<LatestPostGalerieHomeProps> = ({
                 <div className="content">
                   <div className="post-meta post-meta-a has-below">
                     <h2 className="is-title post-title">
-                      <Link 
-                      href={{
-                        pathname: `/${article.slug}`, // URL dynamique
-                      }}
-                       className="post-title-2">
+                      <Link href={{
+                      pathname: `/${article.slug}`, // URL dynamique
+                    }} 
+                    className="post-title-2">
+
                         {truncateTitle(he.decode(article.title), 7)}{" "}
+                        {/* Limite à 10 mots */}
                       </Link>
                     </h2>
                     <div className="post-meta-items meta-below">
@@ -113,18 +117,20 @@ const LatestPostGalerieHome: React.FC<LatestPostGalerieHomeProps> = ({
                     </div>
                   </div>
                   <div className="excerpt post-exercpt">
-                    <p>{removeTags(he.decode(article.excerpt))}</p>
+                    <p>
+                      {/* <div dangerouslySetInnerHTML={{ __html: article.excerpt}} className="red"/> */}
+
+                      {removeTags(he.decode(article.excerpt))}
+                    </p>
                   </div>
                 </div>
               </article>
             ))}
           </div>
         </div>
-        <br />
-        <br />
       </section>
     </>
   );
 };
 
-export default LatestPostGalerieHome;
+export default LatestPostAlaUne;

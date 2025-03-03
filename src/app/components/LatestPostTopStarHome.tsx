@@ -120,7 +120,7 @@ const LatestPostTopStarHome: React.FC<LatestPostTopStarHomeProps> = ({
                       </span>
                     </div>
                   </div>
-                  <div className="excerpt">
+                  <div className="excerpt post-exercpt">
                     <p>
                       {/* <div dangerouslySetInnerHTML={{ __html: article.excerpt}} className="red"/> */}
 

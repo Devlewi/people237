@@ -109,7 +109,7 @@ const LatestPostVideoHome: React.FC<LatestPostVideoHomeProps> = ({
                     </span>
                   </div>
                 </div>
-                <div className="excerpt">
+                <div className="excerpt post-exercpt">
                   <p>
                   {removeTags(he.decode(article.excerpt))}
                   </p>
