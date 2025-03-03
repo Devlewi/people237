@@ -24,7 +24,6 @@ interface FeaturedInfoProps {
     author: string;
   }[];
 }
-
 // Fonction pour enlever les balises HTML du texte
 
 const FeaturedInfo: React.FC<FeaturedInfoProps> = ({ alauneData }) => {
