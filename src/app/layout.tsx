@@ -330,6 +330,24 @@ export default function RootLayout({
         <>
           <link rel="alternate" type="application/rss+xml" title="Flux RSS People237" href="/feed" />
 
+          <Script
+            async
+            src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+            strategy="afterInteractive" // Chargement après que l'application soit interactive
+          />
+
+          <Script
+            strategy="afterInteractive" // Assure que ce script s'exécute après le chargement initial
+            dangerouslySetInnerHTML={{
+              __html: `
+                (adsbygoogle = window.adsbygoogle || []).push({
+                  google_ad_client: "ca-pub-9760088965124508",
+                  enable_page_level_ads: true
+                });
+              `,
+            }}
+          />
+
           {/* Typicons CSS */}
           <link
             href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css"
