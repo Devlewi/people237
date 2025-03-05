@@ -6,7 +6,7 @@ import HomePageContentComponent from "./components/HomePageContentComponent";
 
 export const metadata: Metadata = {
   title: "ACCUEIL | PEOPLE 237",
-  description: "Page d'accueil PEOPLE 237, découvrez nos dernières actualités.",
+  description: "Découvrez en live l'actualité people en photos et vidéos. Toutes les news et actualités de stars, les meilleurs et les pires look de vos stars.",
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
