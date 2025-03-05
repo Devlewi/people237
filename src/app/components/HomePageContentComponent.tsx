@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 //import LatestPostPeopleHome from "./LatestPostPeopleHome";
-import LatestPostPortraitHome from "./LatestPostPortraitHome";
+//import LatestPostPortraitHome from "./LatestPostPortraitHome";
 import LatestPostEventHome from "./LatestPostEventHome";
 import LatestPostBonPlanHome from "./LatestPostBonPlanHome";
 import LatestPostTopStarHome from "./LatestPostTopStarHome";
@@ -12,6 +12,7 @@ import LatestPostVideoHome from "./LatestPostVideoHome";
 import NewsleterComponent from "./NewsleterComponent";
 import LatestPostDecouverteHome from "./LatestPostDecouverteHome";
 import SidebarDeuxHome from "./SidebarDeuxHome";
+import LatestPostPeopleCamerHome from "./LatestPostPeopleCamerHome";
 
 
 
@@ -105,7 +106,8 @@ const { articles,latestposts,mostviewed } = recapData;
                             data-widget_type="smartmag-postslist.default"
                           >
                             <div className="elementor-widget-container">                            
-                              <LatestPostPortraitHome articlesportrait={articles['people-portrait'] || []} />                              
+                              <LatestPostPeopleCamerHome articlespeoplecamer={articles['people-camer'] || []} />                              
+                              {/* <LatestPostPortraitHome articlesportrait={articles['people-portrait'] || []} /> */}
                               <br />
                               <br />                              
                               {/*<LatestPostEventHome/>*/}
