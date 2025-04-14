@@ -45,8 +45,12 @@ export async function GET() {
         id: postUrl, // Utiliser l'URL complète pour le guid
         link: postUrl,
         description: he.decode(post.content.rendered), // Décoder le contenu HTML
+        content: he.decode(
+          `<p><img width="980" src="${post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || ""}" alt="${he.decode(post.title.rendered)}" decoding="async" /></p>` +
+          post.content.rendered
+        ),      
         date: new Date(post.date),
-        image: post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "",
+        //image: post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "",
         author: [{ name: "people237@people237.com" }],
         category: post.categories?.map((catId: number) => {
           const category = post._embedded["wp:term"][0].find((term: WPCategory) => term.id === catId);
