@@ -17,8 +17,19 @@ const nextConfig: NextConfig = {
       },        
     ],
     domains: ['people237.com','controlpanel.people237.com','people237-frontend.vercel.app', 'people237.vercel.app','client.cynomedia-africa.com'], // Ajoutez ici le domaine de votre image
+  
   },
   
+  async redirects() {
+    return [
+      {
+        source: "/Home",
+        destination: "/",
+        permanent: true,
+      },
+    ];
+  },
+
 };
 
 export default nextConfig;
