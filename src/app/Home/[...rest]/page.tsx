@@ -1,22 +1,13 @@
+// src/app/Home/[...rest]/page.tsx
 import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
-//import Image from "next/image";
+
 
 export const metadata: Metadata = {
   title: "Page supprimée définitivement",
   description: "Cette page a été supprimée et ne sera plus accessible.",
 };
-
-export const dynamic = "force-dynamic";
-
-// Pour forcer le status 410 côté serveur
-export async function GET() {
-  return new Response("Page supprimée définitivement", {
-    status: 410,
-    statusText: "Gone",
-  });
-}
 
 const GonePage = () => {
   return (
@@ -24,8 +15,7 @@ const GonePage = () => {
       <div className="container" style={{ marginTop: 20, marginBottom: 100 }}>
         <div className="flex justify-center items-center min-h-screen bg-gray-100">
           <div className="text-center">
-            <center>
-              
+            <center>              
               <h1 className="text-4xl font-bold text-red-600 mb-4">
                 Erreur 410 - Page supprimée définitivement
               </h1>
