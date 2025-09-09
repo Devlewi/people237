@@ -390,7 +390,7 @@ const ArticleDetail = async ({
     );
   } catch (error) {
     console.error("Erreur lors de la récupération des données:", error); // Log d'erreur détaillé
-    return <div>Erreur lors de la récupération des données</div>;
+    return <div>Erreur lors de la récupération des données.</div>;
   }
 };
 
