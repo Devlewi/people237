@@ -6975,3 +6975,8 @@ ins a img {
     align-items: center;
     margin-bottom: 100px !important;
 }
+
+
+.google-auto-placed{
+    display: none !important;
+}
