@@ -16,7 +16,7 @@ const NotFound = () => {
       <div className="container" style={{ marginTop: 20, marginBottom: 100 }}>
         <div className="flex justify-center items-center min-h-screen bg-gray-100">
           <div className="text-center">
-            {/* Image ajoutée ici */}
+            {/* Image ajoutée ici ... */}
             <center>
             <Image
   src="/images/404.png"
