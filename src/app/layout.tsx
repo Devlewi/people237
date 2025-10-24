@@ -670,18 +670,7 @@ export default function RootLayout({
                     {" "}d
 
                   </a>
-                  {/*
-                  <a
-                    href="#"
-                    className="link service s-youtube"
-                    target="_blank"
-                    rel="nofollow noopener"
-                  >
-                     <i className="icon tsi tsi-youtube">
-                     <FaYoutube />
-  </i>
-                  </a>
-                  */}
+           
                   <a
                     href="#"
                     className="link service s-instagram"
