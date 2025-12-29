@@ -945,11 +945,20 @@ export default function RootLayout({
                         <nav className="navigation navigation-scroll nav-hov-b" style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "10px 0" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "20px", fontSize: 14, fontWeight: 700, fontFamily: "Roboto Slab, sans-serif" }}>
           {navItems.map((item, index) => (
-            <Link key={index} href={item.link} legacyBehavior>
-              <a style={{ display: "flex", alignItems: "center", gap: "5px", textDecoration: "none", color: "inherit" }}>
-                <i className={`typcn ${item.icon}`} /> {item.title}
-              </a>
-            </Link>
+            <Link
+  key={index}
+  href={item.link}
+  style={{
+    display: "flex",
+    alignItems: "center",
+    gap: "5px",
+    textDecoration: "none",
+    color: "inherit"
+  }}
+>
+  <i className={`typcn ${item.icon}`} /> {item.title}
+</Link>
+
           ))}
         </div>
                         </nav>
