@@ -1,11 +1,17 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: 'https://www.people237.com',  // CORRIGÉ : un seul .com
+    siteUrl: 'https://www.people237.com',
     generateRobotsTxt: true, 
     sitemapSize: 5000,
     changefreq: 'daily',
     priority: 0.7,
     additionalSitemaps: [
-      'https://www.people237.com/api/sitemap-articles',  // CORRIGÉ : un seul .com
+      'https://www.people237.com/api/sitemap-articles',
     ],
-  };
+    // AJOUTE CECI pour forcer l'apparition dans le robots.txt
+    robotsTxtOptions: {
+      additionalSitemaps: [
+        'https://www.people237.com/api/sitemap-articles',
+      ],
+    },
+};
