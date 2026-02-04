@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.people237.com.com
+Host: https://www.people237.com
 
 # Sitemaps
-Sitemap: https://www.people237.com.com/sitemap.xml
+Sitemap: https://www.people237.com/sitemap.xml
