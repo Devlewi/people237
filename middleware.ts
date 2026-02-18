@@ -5,22 +5,25 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const urlLower = pathname.toLowerCase();
 
-  // 1. GESTION DES ANCIENNES URLS (CODE 410 - GONE)
-  // On cible /Home, /home et les paramètres index.php/html de l'ancien WordPress
-  if (urlLower.startsWith('/home') || pathname.includes('index.php') || pathname.includes('index.html')) {
-    return new NextResponse(null, {
-      status: 410,
-      statusText: 'Gone',
-    });
+  // LOGS DE DEBUG : Regarde ton terminal (pas la console du navigateur)
+  // console.log("Route visitée :", pathname);
+
+  // 1. GESTION STRICTE DE /HOME (avec ou sans slash, peu importe la casse)
+  // On teste toutes les variations possibles pour être sûr
+  if (urlLower === '/home' || urlLower === '/home/') {
+    return NextResponse.redirect(new URL('/', request.url), 301);
   }
 
-  // 2. EXCLUSION PRIORITAIRE : On laisse passer les flux RSS
-  if (pathname.endsWith('/feed') || pathname.endsWith('/feed/')) {
-    return NextResponse.next();
+  // 2. GESTION DES SOUS-PAGES DE /HOME (Code 410)
+  if (urlLower.startsWith('/home/')) {
+    return new NextResponse(null, { status: 410 });
   }
 
-  // 3. REDIRECTION DES CATÉGORIES (CODE 301)
-  if (pathname.startsWith('/category/')) {
+  // 3. GESTION DES CATÉGORIES
+  if (urlLower.startsWith('/category/')) {
+    if (urlLower.includes('/feed')) {
+      return NextResponse.next();
+    }
     return NextResponse.redirect(new URL('/', request.url), 301);
   }
 
@@ -28,6 +31,8 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // On ajoute /home et /Home au matcher pour que le middleware s'active dessus
-  matcher: ['/category/:path*', '/home/:path*', '/Home/:path*'],
+  // Le matcher doit être large pour attraper /Home, /home, /home/ etc.
+  matcher: [
+    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+  ],
 }

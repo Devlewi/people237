@@ -22,15 +22,35 @@ const nextConfig: NextConfig = {
   
  // Dans ton next.config.js, garde uniquement ce qui est nécessaire :
 async redirects() {
-  return [
-    // Supprime la règle /Home/:path* d'ici !
-    {
-      source: "/tag/:path*",
-      destination: "/",
-      permanent: true,
-    },
-  ];
-},
+    return [
+      // 1. Redirection de /home et /Home (insensible à la casse par défaut) vers l'accueil
+      // Le :path* permet de rediriger aussi /home/ (avec slash)
+      {
+        source: "/home",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/home/",
+        destination: "/",
+        permanent: true,
+      },
+      // 2. Redirection des tags vers l'accueil
+      {
+        source: "/tag/:path*",
+        destination: "/",
+        permanent: true,
+      },
+      // 3. Redirection de toutes les catégories vers l'accueil
+      // (On évite de mettre /feed ici pour qu'il reste accessible via le middleware si besoin)
+      {
+        source: "/category/:path*",
+        destination: "/",
+        permanent: true,
+      },
+    ];
+  },
+
 
 };
 
