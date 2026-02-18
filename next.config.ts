@@ -20,34 +20,17 @@ const nextConfig: NextConfig = {
   
   },
   
-  async redirects() {
-    return [
-      // 1. Redirige /Home et TOUT ce qui suit (/Home/...) vers l'accueil
-      {
-        source: "/Home/:path*",
-        destination: "/",
-        permanent: true,
-      },
-      // 2. Redirige spécifiquement la catégorie supprimée et ses sous-pages
-      {
-        source: "/category/events/:path*",
-        destination: "/",
-        permanent: true,
-      },
-      // 3. Redirige tous les flux RSS (feed) qui polluent vos logs
-      {
-        source: "/:prefix*/feed",
-        destination: "/",
-        permanent: true,
-      },
-      // 4. Redirige les anciens tags WordPress vers l'accueil
-      {
-        source: "/tag/:path*",
-        destination: "/",
-        permanent: true,
-      },
-    ];
-  },
+ // Dans ton next.config.js, garde uniquement ce qui est nécessaire :
+async redirects() {
+  return [
+    // Supprime la règle /Home/:path* d'ici !
+    {
+      source: "/tag/:path*",
+      destination: "/",
+      permanent: true,
+    },
+  ];
+},
 
 };
 
