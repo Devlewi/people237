@@ -26,18 +26,18 @@ const Banner336x280: React.FC = () => {
     <div style={{ textAlign: "center", marginTop: "0px" }}>
       {/* Affichage de l'iframe publicitaire */}
       <iframe
-        id="afb1865f"
-        name="afb1865f"
-        src={`https://client.cynomedia-africa.com/www/delivery/afr.php?zoneid=208&cb=${randomNumber}`}
+        id="acbc84c8"
+        name="acbc84c8"
+        src={`https://adserver.cynomedia.com/www/delivery/afr.php?zoneid=208&cb=${randomNumber}`}
         frameBorder="0"
         scrolling="no"
         width="336"
         height="280"
         allow="autoplay"
       >
-        <a href={`https://client.cynomedia-africa.com/www/delivery/ck.php?n=a5c548db&cb=${randomNumber}`} target="_blank" rel="noopener noreferrer">
+        <a href={`https://adserver.cynomedia.com/www/delivery/ck.php?n=aac8d955&cb=${randomNumber}`} target="_blank" rel="noopener noreferrer">
           <Image
-            src={`https://client.cynomedia-africa.com/www/delivery/avw.php?zoneid=208&cb=${randomNumber}&n=a5c548db`}
+            src={`https://adserver.cynomedia.com/www/delivery/avw.php?zoneid=208&cb=${randomNumber}&n=aac8d955`}
             width={336}
             height={280}
             alt="Advertisement"
