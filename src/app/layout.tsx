@@ -1314,6 +1314,7 @@ export default function RootLayout({
                           </div>
                           <div className="block-content">
                             <div className="loop loop-small loop-small-a loop-sep loop-small-sep grid grid-1 md:grid-1 sm:grid-1 xs:grid-1">
+                              {/*
                               <article className="l-post small-post small-a-post m-pos-left">
                                 <div className="content">
                                   <div className="post-meta post-meta-a post-meta-left has-below">
@@ -1327,6 +1328,7 @@ export default function RootLayout({
                                   </div>
                                 </div>
                               </article>
+                              */}
                               <article className="l-post small-post small-a-post m-pos-left">
                                 <div className="content">
                                   <div className="post-meta post-meta-a post-meta-left has-below">
@@ -1339,6 +1341,7 @@ export default function RootLayout({
                                   </div>
                                 </div>
                               </article>
+                              {/*
                               <article className="l-post small-post small-a-post m-pos-left">
                                 <div className="content">
                                   <div className="post-meta post-meta-a post-meta-left has-below">
@@ -1351,6 +1354,7 @@ export default function RootLayout({
                                   </div>
                                 </div>
                               </article>
+                              */}
                             </div>
                           </div>
                         </section>
