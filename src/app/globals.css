@@ -6980,3 +6980,19 @@ ins a img {
 .google-auto-placed{
     display: none !important;
 }
+
+
+
+
+
+
+
+.mentions-content h2 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.mentions-content p {
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
